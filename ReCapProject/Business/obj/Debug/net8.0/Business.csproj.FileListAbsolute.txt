@@ -1,0 +1,59 @@
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\bin\Debug\net8.0\Business.deps.json
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\bin\Debug\net8.0\Business.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\bin\Debug\net8.0\Business.pdb
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\bin\Debug\net8.0\DataAccess.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\bin\Debug\net8.0\Entities.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\bin\Debug\net8.0\DataAccess.pdb
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\bin\Debug\net8.0\Entities.pdb
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\obj\Debug\net8.0\Business.csproj.AssemblyReference.cache
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\obj\Debug\net8.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\obj\Debug\net8.0\Business.AssemblyInfoInputs.cache
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\obj\Debug\net8.0\Business.AssemblyInfo.cs
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\obj\Debug\net8.0\Business.csproj.CoreCompileInputs.cache
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\obj\Debug\net8.0\Business.csproj.Up2Date
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\obj\Debug\net8.0\Business.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\obj\Debug\net8.0\refint\Business.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\obj\Debug\net8.0\Business.pdb
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\obj\Debug\net8.0\ref\Business.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\bin\Debug\net8.0\Core.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Business\bin\Debug\net8.0\Core.pdb
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\obj\Debug\net8.0\Business.csproj.AssemblyReference.cache
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\obj\Debug\net8.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\obj\Debug\net8.0\Business.AssemblyInfoInputs.cache
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\obj\Debug\net8.0\Business.AssemblyInfo.cs
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\obj\Debug\net8.0\Business.csproj.CoreCompileInputs.cache
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\obj\Debug\net8.0\Business.sourcelink.json
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\obj\Debug\net8.0\Business.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\obj\Debug\net8.0\refint\Business.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\obj\Debug\net8.0\Business.pdb
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\bin\Debug\net8.0\Business.deps.json
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\bin\Debug\net8.0\Business.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\bin\Debug\net8.0\Business.pdb
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\bin\Debug\net8.0\Core.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\bin\Debug\net8.0\DataAccess.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\bin\Debug\net8.0\Entities.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\bin\Debug\net8.0\Core.pdb
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\bin\Debug\net8.0\DataAccess.pdb
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\bin\Debug\net8.0\Entities.pdb
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\obj\Debug\net8.0\Business.csproj.Up2Date
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Business\obj\Debug\net8.0\ref\Business.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\bin\Debug\net8.0\Business.deps.json
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\bin\Debug\net8.0\Business.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\bin\Debug\net8.0\Business.pdb
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\bin\Debug\net8.0\Core.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\bin\Debug\net8.0\DataAccess.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\bin\Debug\net8.0\Entities.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\bin\Debug\net8.0\Core.pdb
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\bin\Debug\net8.0\DataAccess.pdb
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\bin\Debug\net8.0\Entities.pdb
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\obj\Debug\net8.0\Business.csproj.AssemblyReference.cache
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\obj\Debug\net8.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\obj\Debug\net8.0\Business.AssemblyInfoInputs.cache
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\obj\Debug\net8.0\Business.AssemblyInfo.cs
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\obj\Debug\net8.0\Business.csproj.CoreCompileInputs.cache
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\obj\Debug\net8.0\Business.sourcelink.json
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\obj\Debug\net8.0\Business.csproj.Up2Date
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\obj\Debug\net8.0\Business.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\obj\Debug\net8.0\refint\Business.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\obj\Debug\net8.0\Business.pdb
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Business\obj\Debug\net8.0\ref\Business.dll

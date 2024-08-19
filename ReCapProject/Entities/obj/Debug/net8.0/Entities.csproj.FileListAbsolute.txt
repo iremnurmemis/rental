@@ -1,0 +1,47 @@
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\bin\Debug\net8.0\Entities.deps.json
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\bin\Debug\net8.0\Entities.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\bin\Debug\net8.0\Entities.pdb
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\obj\Debug\net8.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\obj\Debug\net8.0\Entities.AssemblyInfoInputs.cache
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\obj\Debug\net8.0\Entities.AssemblyInfo.cs
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\obj\Debug\net8.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\obj\Debug\net8.0\Entities.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\obj\Debug\net8.0\refint\Entities.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\obj\Debug\net8.0\Entities.pdb
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\obj\Debug\net8.0\ref\Entities.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\bin\Debug\net8.0\Core.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\bin\Debug\net8.0\Core.pdb
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\obj\Debug\net8.0\Entities.csproj.AssemblyReference.cache
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\Entities\obj\Debug\net8.0\Entities.csproj.Up2Date
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\bin\Debug\net8.0\Entities.deps.json
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\bin\Debug\net8.0\Entities.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\bin\Debug\net8.0\Entities.pdb
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\bin\Debug\net8.0\Core.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\bin\Debug\net8.0\Core.pdb
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\obj\Debug\net8.0\Entities.csproj.AssemblyReference.cache
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\obj\Debug\net8.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\obj\Debug\net8.0\Entities.AssemblyInfoInputs.cache
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\obj\Debug\net8.0\Entities.AssemblyInfo.cs
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\obj\Debug\net8.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\obj\Debug\net8.0\Entities.sourcelink.json
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\obj\Debug\net8.0\Entities.csproj.Up2Date
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\obj\Debug\net8.0\Entities.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\obj\Debug\net8.0\refint\Entities.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\obj\Debug\net8.0\Entities.pdb
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\Entities\obj\Debug\net8.0\ref\Entities.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\bin\Debug\net8.0\Entities.deps.json
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\bin\Debug\net8.0\Entities.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\bin\Debug\net8.0\Entities.pdb
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\bin\Debug\net8.0\Core.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\bin\Debug\net8.0\Core.pdb
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\obj\Debug\net8.0\Entities.csproj.AssemblyReference.cache
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\obj\Debug\net8.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\obj\Debug\net8.0\Entities.AssemblyInfoInputs.cache
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\obj\Debug\net8.0\Entities.AssemblyInfo.cs
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\obj\Debug\net8.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\obj\Debug\net8.0\Entities.sourcelink.json
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\obj\Debug\net8.0\Entities.csproj.Up2Date
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\obj\Debug\net8.0\Entities.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\obj\Debug\net8.0\refint\Entities.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\obj\Debug\net8.0\Entities.pdb
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\Entities\obj\Debug\net8.0\ref\Entities.dll

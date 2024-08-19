@@ -1,0 +1,59 @@
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\bin\Debug\net8.0\DataAccess.deps.json
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\bin\Debug\net8.0\DataAccess.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\bin\Debug\net8.0\DataAccess.pdb
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\bin\Debug\net8.0\Entities.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\bin\Debug\net8.0\Entities.pdb
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.csproj.AssemblyReference.cache
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfo.cs
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.csproj.Up2Date
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.pdb
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\bin\Debug\net8.0\DataAccess.runtimeconfig.json
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.genruntimeconfig.cache
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\bin\Debug\net8.0\Core.dll
+C:\Users\Ahmet Kahveci\Desktop\Tasks\ReCapProject\DataAccess\bin\Debug\net8.0\Core.pdb
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\bin\Debug\net8.0\DataAccess.deps.json
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\bin\Debug\net8.0\DataAccess.runtimeconfig.json
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\bin\Debug\net8.0\DataAccess.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\bin\Debug\net8.0\DataAccess.pdb
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\bin\Debug\net8.0\Core.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\bin\Debug\net8.0\Entities.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\bin\Debug\net8.0\Core.pdb
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\bin\Debug\net8.0\Entities.pdb
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.csproj.AssemblyReference.cache
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfo.cs
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.sourcelink.json
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.csproj.Up2Date
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.pdb
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.genruntimeconfig.cache
+C:\Users\MSI\Source\Repos\RentACar\ReCapProject\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\bin\Debug\net8.0\DataAccess.deps.json
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\bin\Debug\net8.0\DataAccess.runtimeconfig.json
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\bin\Debug\net8.0\DataAccess.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\bin\Debug\net8.0\DataAccess.pdb
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\bin\Debug\net8.0\Core.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\bin\Debug\net8.0\Entities.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\bin\Debug\net8.0\Core.pdb
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\bin\Debug\net8.0\Entities.pdb
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.csproj.AssemblyReference.cache
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfo.cs
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.sourcelink.json
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.csproj.Up2Date
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.pdb
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\obj\Debug\net8.0\DataAccess.genruntimeconfig.cache
+C:\Users\İrem\Source\Repos\RentACarNTier\ReCapProject\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
