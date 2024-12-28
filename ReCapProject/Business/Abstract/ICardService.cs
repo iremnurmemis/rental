@@ -8,5 +8,7 @@ namespace Business
     {
         Task<IResult> AddCard(CreatCardTokenDto createCard);
         IResult  DeleteCard(Card card);
+
+        IDataResult<List<Card>> GetUserCards(int userId);
     }
 }

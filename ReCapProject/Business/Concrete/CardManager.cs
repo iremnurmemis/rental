@@ -41,8 +41,9 @@ namespace Business
             return new SuccessResult("card siliindi");
         }
 
-       
-
-
+        public IDataResult<List<Card>> GetUserCards(int userId)
+        {
+            return new SuccessDataResult<List<Card>>(_cardDal.GetAll(c => c.UserId == userId)); 
+        }
     }
 }
