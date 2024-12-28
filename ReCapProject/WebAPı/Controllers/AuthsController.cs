@@ -1,7 +1,12 @@
 ﻿using Business;
+using Core.Interceptors.Utilities.Results;
+using DataAccess;
+using DataAccess.Migrations;
 using Entities;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace WebAPı.Controllers
 {
@@ -10,46 +15,98 @@ namespace WebAPı.Controllers
     public class AuthsController : ControllerBase
     {
         private IAuthService _authService;
-        public AuthsController(IAuthService authService)
+        private IUserDal _userDal;
+        IUserService _userService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public AuthsController(IAuthService authService,IUserDal userDal,IUserService userService, IHttpContextAccessor httpContextAccessor)
         {
             _authService = authService;
+            _userDal = userDal;
+            _userService = userService;
+            _httpContextAccessor = httpContextAccessor;
+            
         }
 
         [HttpPost("login")]
-        public IActionResult Login(UserForLoginDto userForLoginDto)
+        public IActionResult Login([FromBody] UserForLoginDto userForLoginDto)
         {
-            var userToLogin=_authService.Login(userForLoginDto);
-            if (!userToLogin.Success)
+            var result = _authService.Login(userForLoginDto);
+            if (!result.Success)
             {
-                return BadRequest(userToLogin.Message);
+
+                return Unauthorized(new { message = result.Message });
             }
 
-            //basarılı ise token olustur
-            var result = _authService.CreateAccessToken(userToLogin.Data);
-            if(result.Success)
-            {
-                return Ok(result.Data);
-            }
-
-            return BadRequest(result.Message);
+            return Ok(result.Data);
         }
 
-
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+            _authService.Logout();
+            return Ok("Logout successful.");
+        }
 
         [HttpPost("register")]
         public IActionResult Register(UserForRegisterDto userForRegisterDto)
         {
-            var userExist=_authService.UserExist(userForRegisterDto.Email);
-            if (!userExist.Success)
+        
+            var registerResult = _authService.Register(userForRegisterDto, userForRegisterDto.Password);
+            if (!registerResult.Success)
             {
-                return BadRequest(userExist.Message);
+                return BadRequest(new {message=registerResult.Message});
             }
 
-            var registerResult = _authService.Register(userForRegisterDto, userForRegisterDto.Password);
-            var result = _authService.CreateAccessToken(registerResult.Data);
+            return Ok(registerResult.Data);
+        }
+
+
+
+        [HttpGet("confirm-email")]
+        public IActionResult ConfirmEmail(string email, string token)
+        {
+            var user = _userDal.Get(u => u.Email == email);
+            if (user == null || user.Token != token)
+            {
+                return BadRequest("Geçersiz token veya e-posta.");
+            }
+
+            user.Status = true; // Kullanıcıyı aktif hale getiriyoruz
+            _userDal.Update(user);
+
+            return Ok("E-posta doğrulandı. Hesabınız artık aktif!");
+        }
+
+        [HttpPost("request-password-reset")]
+        public IActionResult RequestPasswordReset([FromBody] string email)
+        {
+            var result = _authService.RequestPasswordReset(email);
             if (result.Success)
             {
-                return Ok(result.Data); 
+                return Ok(result.Message);
+            }
+            return BadRequest(result.Message);
+        }
+
+        [HttpPost("reset-password")]
+        public IActionResult ResetPassword([FromBody] ResetPasswordDto resetPasswordDto)
+        {
+            var result = _authService.ResetPassword(resetPasswordDto.Email, resetPasswordDto.Token, resetPasswordDto.NewPassword);
+            if (result.Success)
+            {
+                return Ok(result.Message);
+            }
+            return BadRequest(result.Message);
+        }
+
+        [HttpPost("change-password")]
+        public IActionResult ChangePassword([FromBody] ChangePasswordDto changePasswordDto)
+        {
+            var result = _authService.ChangePassword(changePasswordDto.Email, changePasswordDto.CurrentPassword, changePasswordDto.NewPassword);
+            if (result.Success)
+            {
+                return Ok(result.Message);
             }
             return BadRequest(result.Message);
         }

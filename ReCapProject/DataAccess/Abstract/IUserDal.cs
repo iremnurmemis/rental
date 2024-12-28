@@ -1,5 +1,6 @@
 ﻿
 
+using Entities;
 using Core;
 
 namespace DataAccess

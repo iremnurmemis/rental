@@ -8,8 +8,12 @@ namespace Entities
     {
         public int Id { get; set; }
         public int CarId { get; set; }
+        public Car Car { get; set; }
         public string? ImagePath { get; set; }
         public DateTime Date { get; set; }
+
+        public bool IsMain { get; set; }  // Ana resim mi?
+
 
         //public IFormFile file { get; set; }
     }

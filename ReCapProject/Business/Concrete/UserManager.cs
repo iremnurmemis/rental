@@ -3,6 +3,7 @@ using Core;
 using Core.Interceptors.Utilities.Results;
 using DataAccess;
 using System.Reflection.Metadata.Ecma335;
+using Entities;
 
 namespace Business
 {
@@ -17,6 +18,11 @@ namespace Business
         public void Add(User user)
         {
              _userDal.Add(user);
+        }
+
+        public IDataResult<User> GetById(int userId)
+        {
+            return new SuccessDataResult<User>(_userDal.Get(u=>u.Id==userId),"user geldi");
         }
 
         public IDataResult<User> GetByMail(string email)

@@ -3,57 +3,45 @@
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System.Diagnostics;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 
 namespace Core
 {
     public class JwtHelper : ITokenHelper
     {
-        public IConfiguration _configuration { get; }
-        private TokenOptions _tokenOptions;
-        DateTime _accessTokenExpiration;
-
-        public JwtHelper(IConfiguration configuration)
+        
+        public JwtHelper()
         {
-            _configuration = configuration;
-            _tokenOptions=_configuration.GetSection("TokenOptions").Get<TokenOptions>();
-            _accessTokenExpiration= DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);
+           
         }
 
-        // tokenoptionsu ı config dosyasından okumak
-        public AccessToken CreateToken(User user, List<OperationClaim> operationClaims)
+        public string GenerateToken(string username, string password)
         {
-            var securityKey=SecurityKeyHelper.CreateSecurityKey(_tokenOptions.SecurityKey);
-            var signingCredentials = SigningCredentialsHelper.CreateSigningCredentials(securityKey);
-            var jwt = CreateJwtSecurityToken(_tokenOptions, user, signingCredentials, operationClaims);
-            var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
-            var token=jwtSecurityTokenHandler.WriteToken(jwt);
+            var claims = new[] {
+                new Claim(ClaimTypes.Name, username),
+                new Claim(JwtRegisteredClaimNames.Email,username)
+            };
+            string signinkey = "BuBenimSigningKeyBuBenimSigningKey";
 
-            return new AccessToken { Token = token, Expiration=_accessTokenExpiration };
-        }
-
-        public JwtSecurityToken CreateJwtSecurityToken(TokenOptions tokenOptions, User user, SigningCredentials signingCredentials, List<OperationClaim> operationClaims)
-        {
-            var jwt = new JwtSecurityToken(
-                issuer: tokenOptions.Issuer,
-                audience: tokenOptions.Audience,
-                claims: SetClaims(user, operationClaims),
-                signingCredentials: signingCredentials,
-                expires: _accessTokenExpiration,
-                notBefore: DateTime.Now
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signinkey));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var jwtSecurityToken = new JwtSecurityToken(
+                issuer: "admin.admin@gmail.com",
+                audience: "BuBenimKullabdıgımAudienceDegeri",
+                claims: claims,
+                expires: DateTime.Now.AddDays(15),
+                notBefore: DateTime.Now,
+                signingCredentials: credentials
                 );
-            return jwt;
+
+
+            var token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
+            return token;
         }
 
-        private IEnumerable<Claim> SetClaims(User user, List<OperationClaim> operationClaims)
-        { 
-            var claims = new List<Claim>();
-            claims.AddNameIdentifier(user.Id.ToString());
-            claims.AddEmail(user.Email);
-            claims.AddName($"{user.FirstName} {user.LastName} ");
-            claims.AddRoles(operationClaims.Select(oc=>oc.Name).ToArray());
-            return claims;
-        }
+
     }
 }

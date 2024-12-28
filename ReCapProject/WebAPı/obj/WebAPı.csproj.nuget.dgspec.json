@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\WebAPı\\WebAPı.csproj": {}
+    "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAPı\\WebAPı.csproj": {}
   },
   "projects": {
-    "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Business\\Business.csproj": {
+    "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Business\\Business.csproj",
+        "projectUniqueName": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Business\\Business.csproj",
-        "packagesPath": "C:\\Users\\İrem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Business\\obj\\",
+        "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Business.csproj",
+        "packagesPath": "C:\\Users\\ılayda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\İrem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ılayda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,14 +33,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Core\\Core.csproj"
+              "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Core\\Core.csproj"
               },
-              "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Entities\\Entities.csproj"
+              "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Entities.csproj"
               }
             }
           }
@@ -71,6 +71,18 @@
             "FluentValidation": {
               "target": "Package",
               "version": "[11.9.2, )"
+            },
+            "Iyzipay": {
+              "target": "Package",
+              "version": "[2.1.65, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             }
           },
           "imports": [
@@ -93,20 +105,20 @@
         }
       }
     },
-    "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Core\\Core.csproj": {
+    "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\İrem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Core\\obj\\",
+        "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\ılayda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\İrem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ılayda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -157,7 +169,7 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.3, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
@@ -192,20 +204,20 @@
         }
       }
     },
-    "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\İrem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\ılayda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\İrem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ılayda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -221,11 +233,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Core\\Core.csproj"
+              "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Core\\Core.csproj"
               },
-              "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Entities\\Entities.csproj"
+              "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Entities.csproj"
               }
             }
           }
@@ -247,13 +259,13 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -263,7 +275,11 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.10, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.10, )"
             }
           },
           "imports": [
@@ -286,20 +302,20 @@
         }
       }
     },
-    "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Entities\\Entities.csproj": {
+    "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\İrem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\ılayda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\İrem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ılayda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -315,8 +331,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Core\\Core.csproj"
+              "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Core\\Core.csproj"
               }
             }
           }
@@ -355,20 +371,20 @@
         }
       }
     },
-    "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\WebAPı\\WebAPı.csproj": {
+    "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAPı\\WebAPı.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\WebAPı\\WebAPı.csproj",
+        "projectUniqueName": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAPı\\WebAPı.csproj",
         "projectName": "WebAPı",
-        "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\WebAPı\\WebAPı.csproj",
-        "packagesPath": "C:\\Users\\İrem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\WebAPı\\obj\\",
+        "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAPı\\WebAPı.csproj",
+        "packagesPath": "C:\\Users\\ılayda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAPı\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\İrem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ılayda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -384,17 +400,17 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Business\\Business.csproj": {
-                "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Business\\Business.csproj"
+              "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Business.csproj": {
+                "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Business.csproj"
               },
-              "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Core\\Core.csproj"
+              "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Core\\Core.csproj"
               },
-              "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\İrem\\Source\\Repos\\RentACarNTier\\ReCapProject\\Entities\\Entities.csproj"
+              "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Entities.csproj"
               }
             }
           }
@@ -418,13 +434,33 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "Iyzipay": {
+              "target": "Package",
+              "version": "[2.1.65, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.9.0, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[6.9.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[6.9.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[6.9.0, )"
             }
           },
           "imports": [

@@ -8,7 +8,7 @@ namespace Business
     {
         public CarValidator()
         {
-            RuleFor(c => c.DailyPrice).GreaterThan(0);
+            RuleFor(c => c.PricePerHour).GreaterThan(0);
         }
     }
 }

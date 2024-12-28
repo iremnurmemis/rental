@@ -17,12 +17,22 @@ namespace Core
 
         public static bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
         {
+            if (passwordHash == null || passwordSalt == null || passwordHash.Length == 0 || passwordSalt.Length == 0)
+            {
+                throw new ArgumentException("Password hash or salt is invalid.");
+            }
+
             using (var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
             {
-               var computedHash= hmac.ComputeHash(Encoding.UTF8.GetBytes(password));//kullanıcının gönderdiğinin hashlenmesi
+                var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
+                if (computedHash.Length != passwordHash.Length) // Uzunlukları kontrol et
+                {
+                    return false;
+                }
+
                 for (int i = 0; i < computedHash.Length; i++)
                 {
-                    if(computedHash[i] != passwordHash[i])
+                    if (computedHash[i] != passwordHash[i])
                     {
                         return false;
                     }
@@ -31,5 +41,6 @@ namespace Core
 
             return true;
         }
+
     }
 }

@@ -3,6 +3,7 @@
 using Core;
 using FluentValidation;
 
+
 namespace Business
 {
     public class UserValidator:AbstractValidator<User>

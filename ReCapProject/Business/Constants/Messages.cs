@@ -50,8 +50,7 @@ namespace Business
         public static string CarImageListed = "Resimler listelendi";
         public static string CarImageListedByCarId = "Arabaya ait resimler listelendi";
 
-        public static string UserNotFound = "Kullanıcı bulunamadı";
-        public static string PasswordError = "Şifre hatalı";
+       
         public static string SuccessfulLogin = "Login işlemi başarılı";
 
         public static string UserAlreadyExists = "Bu kullanıcı zaten mecvut";

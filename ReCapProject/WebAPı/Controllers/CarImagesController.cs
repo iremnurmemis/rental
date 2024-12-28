@@ -1,4 +1,5 @@
 ﻿using Business;
+using DataAccess.Migrations;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -43,10 +44,12 @@ namespace WebAPı.Controllers
 
 
         [HttpPost("add")]
-        public IActionResult Add(IFormFile file, [FromForm] int carId)
+        public IActionResult Add(IFormFile file, [FromForm] int carId, [FromForm] bool IsMain)
         { //file ve carId lazım kullanıcı tarafından.
-            CarImage carImage = new() { CarId = carId };
+            CarImage carImage = new() { CarId = carId,IsMain=IsMain };
             var result = _carImageService.Add(file, carImage);
+
+
             if (result.Success)
             {
                 return Ok(result);

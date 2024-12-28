@@ -8,6 +8,7 @@ namespace Business
     {
         void Add(User user);
         IDataResult<User> GetByMail(string email);
+        IDataResult<User> GetById(int userId);
         IDataResult<List<OperationClaim>> GetClaims(User user);
     }
 }
