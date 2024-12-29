@@ -17,7 +17,7 @@ namespace Business
         }
 
 
-        public async Task<IResult> AddCard(CreatCardTokenDto createCard)
+        public async Task<IDataResult<CreatCardTokenDto>>AddCard(CreatCardTokenDto createCard)
         {
             var cardToken = await _iyzipayService.CreateCardToken(createCard);
 
@@ -26,12 +26,27 @@ namespace Business
                 CardToken = cardToken,
                 CardType = createCard.CardType,
                 UserId = createCard.UserId,
+                CardHolderName = createCard.CardHolderName,
+                CardNumber = createCard.CardNumber,
+
+                 
 
             };
 
-
             _cardDal.Add(newCard);
-            return new SuccessResult("card sisteme başarıyla eklendi");
+
+            CreatCardTokenDto createcard = new CreatCardTokenDto
+            {
+                Id = newCard.Id,
+                CardType = createCard.CardType,
+                UserId = createCard.UserId,
+                CardHolderName = createCard.CardHolderName,
+                CardNumber = createCard.CardNumber,
+                ExpireMonth = createCard.ExpireMonth,
+                ExpireYear = createCard.ExpireYear,
+            };
+
+            return new SuccessDataResult<CreatCardTokenDto>(createcard,"card sisteme başarıyla eklendi");
 
         }
 

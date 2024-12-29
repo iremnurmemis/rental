@@ -17,9 +17,9 @@ namespace WebAPı
         }
 
         [HttpPost("addCard")]
-        public IActionResult AddCard(CreatCardTokenDto card)
+        public async Task<IActionResult> AddCard(CreatCardTokenDto card)
         {
-            var result = _cardService.AddCard(card).Result;
+            var result = await  _cardService.AddCard(card);
             if (result.Success)
             {
                 return Ok(result);

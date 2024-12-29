@@ -6,7 +6,7 @@ namespace Business
 {
     public interface ICardService
     {
-        Task<IResult> AddCard(CreatCardTokenDto createCard);
+        Task<IDataResult<CreatCardTokenDto>> AddCard(CreatCardTokenDto createCard);
         IResult  DeleteCard(Card card);
 
         IDataResult<List<Card>> GetUserCards(int userId);
