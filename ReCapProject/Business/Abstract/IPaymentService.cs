@@ -12,7 +12,7 @@ namespace Business
         IResult Delete(Payment payment);
 
         IDataResult<List<Payment>> GetAll();
-        IDataResult<List<Payment>> GetAllPaymentByUserId(int userId);
+        IDataResult<List<UserPaymentsDto>> GetAllPaymentByUserId(int userId);
 
 
 

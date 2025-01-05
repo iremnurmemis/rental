@@ -7,32 +7,20 @@
       "RelativeMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|solutionrelative:business\\concrete\\carrentalmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\entities\\concrete\\carrental.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|solutionrelative:entities\\concrete\\carrental.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\business\\dependencyresolvers\\autofac\\autofacbusinessmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|solutionrelative:business\\dependencyresolvers\\autofac\\autofacbusinessmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\business\\concrete\\iyzipaymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|solutionrelative:business\\concrete\\iyzipaymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\business\\abstract\\iiyzipayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|solutionrelative:business\\abstract\\iiyzipayservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\business\\concrete\\paymentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|solutionrelative:business\\concrete\\paymentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{251540DC-B946-40BC-9151-4710DCEA3AC1}|WebAP\u0131\\WebAP\u0131.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\webap\u0131\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{251540DC-B946-40BC-9151-4710DCEA3AC1}|WebAP\u0131\\WebAP\u0131.csproj|solutionrelative:webap\u0131\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\business\\concrete\\paymentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|solutionrelative:business\\concrete\\paymentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\business\\abstract\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|solutionrelative:business\\abstract\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\business\\abstract\\icarservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|solutionrelative:business\\abstract\\icarservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\entities\\dtos\\userpaymentsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|solutionrelative:entities\\dtos\\userpaymentsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\entities\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -41,22 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\entities\\concrete\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|solutionrelative:entities\\concrete\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\business\\abstract\\icarrentalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|solutionrelative:business\\abstract\\icarrentalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{251540DC-B946-40BC-9151-4710DCEA3AC1}|WebAP\u0131\\WebAP\u0131.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\webap\u0131\\controllers\\carrentalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{251540DC-B946-40BC-9151-4710DCEA3AC1}|WebAP\u0131\\WebAP\u0131.csproj|solutionrelative:webap\u0131\\controllers\\carrentalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\entities\\concrete\\carrentalrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|solutionrelative:entities\\concrete\\carrentalrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\business\\concrete\\cardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|solutionrelative:business\\concrete\\cardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,111 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AutofacBusinessModule.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\DependencyResolvers\\Autofac\\AutofacBusinessModule.cs",
-              "RelativeDocumentMoniker": "Business\\DependencyResolvers\\Autofac\\AutofacBusinessModule.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\DependencyResolvers\\Autofac\\AutofacBusinessModule.cs",
-              "RelativeToolTip": "Business\\DependencyResolvers\\Autofac\\AutofacBusinessModule.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAQwCkAAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T16:25:25.038Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CarRental.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Concrete\\CarRental.cs",
-              "RelativeDocumentMoniker": "Entities\\Concrete\\CarRental.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Concrete\\CarRental.cs",
-              "RelativeToolTip": "Entities\\Concrete\\CarRental.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T14:16:18.272Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Payment.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Payment.cs",
-              "RelativeDocumentMoniker": "Entities\\Payment.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Payment.cs",
-              "RelativeToolTip": "Entities\\Payment.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T14:14:26.009Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PaymentStatus.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Concrete\\enums\\PaymentStatus.cs",
-              "RelativeDocumentMoniker": "Entities\\Concrete\\enums\\PaymentStatus.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Concrete\\enums\\PaymentStatus.cs",
-              "RelativeToolTip": "Entities\\Concrete\\enums\\PaymentStatus.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T14:13:23.961Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PaymentManager.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\PaymentManager.cs",
-              "RelativeDocumentMoniker": "Business\\Concrete\\PaymentManager.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\PaymentManager.cs",
-              "RelativeToolTip": "Business\\Concrete\\PaymentManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T14:12:36.559Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CarRentalRequest.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Concrete\\CarRentalRequest.cs",
-              "RelativeDocumentMoniker": "Entities\\Concrete\\CarRentalRequest.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Concrete\\CarRentalRequest.cs",
-              "RelativeToolTip": "Entities\\Concrete\\CarRentalRequest.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAAwBMAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T10:37:30.925Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CarRentalsController.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAP\u0131\\Controllers\\CarRentalsController.cs",
-              "RelativeDocumentMoniker": "WebAP\u0131\\Controllers\\CarRentalsController.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAP\u0131\\Controllers\\CarRentalsController.cs",
-              "RelativeToolTip": "WebAP\u0131\\Controllers\\CarRentalsController.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAA/wCgAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T10:26:39.281Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IIyzipayService.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Abstract\\IIyzipayService.cs",
-              "RelativeDocumentMoniker": "Business\\Abstract\\IIyzipayService.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Abstract\\IIyzipayService.cs",
-              "RelativeToolTip": "Business\\Abstract\\IIyzipayService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T11:10:16.083Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -180,72 +52,88 @@
               "RelativeDocumentMoniker": "Business\\Concrete\\CarRentalManager.cs",
               "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\CarRentalManager.cs",
               "RelativeToolTip": "Business\\Concrete\\CarRentalManager.cs",
-              "ViewState": "AQIAAJgAAAAAAAAAAAAwwK4AAAAtAAAA",
+              "ViewState": "AQIAAK4AAAAAAAAAAAAqwL0AAABWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T10:34:35.633Z",
+              "WhenOpened": "2025-01-05T18:49:42.113Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IyzipayManager.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\IyzipayManager.cs",
-              "RelativeDocumentMoniker": "Business\\Concrete\\IyzipayManager.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\IyzipayManager.cs",
-              "RelativeToolTip": "Business\\Concrete\\IyzipayManager.cs",
-              "ViewState": "AQIAAH8AAAAAAAAAAAAgwI8AAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T10:58:59.567Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "PaymentsController.cs",
               "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAP\u0131\\Controllers\\PaymentsController.cs",
               "RelativeDocumentMoniker": "WebAP\u0131\\Controllers\\PaymentsController.cs",
               "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAP\u0131\\Controllers\\PaymentsController.cs",
               "RelativeToolTip": "WebAP\u0131\\Controllers\\PaymentsController.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAgwE0AAAAAAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T16:12:16.886Z",
+              "WhenOpened": "2025-01-05T18:18:51.034Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ICarService.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Abstract\\ICarService.cs",
-              "RelativeDocumentMoniker": "Business\\Abstract\\ICarService.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Abstract\\ICarService.cs",
-              "RelativeToolTip": "Business\\Abstract\\ICarService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAgAAAA",
+              "DocumentIndex": 3,
+              "Title": "IPaymentService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Abstract\\IPaymentService.cs",
+              "RelativeDocumentMoniker": "Business\\Abstract\\IPaymentService.cs",
+              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Abstract\\IPaymentService.cs",
+              "RelativeToolTip": "Business\\Abstract\\IPaymentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T14:24:04.907Z"
+              "WhenOpened": "2025-01-05T17:24:20.162Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ICarRentalService.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Abstract\\ICarRentalService.cs",
-              "RelativeDocumentMoniker": "Business\\Abstract\\ICarRentalService.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Abstract\\ICarRentalService.cs",
-              "RelativeToolTip": "Business\\Abstract\\ICarRentalService.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAA5wBYAAAA0AAAA",
+              "DocumentIndex": 4,
+              "Title": "UserPaymentsDto.cs",
+              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\DTOs\\UserPaymentsDto.cs",
+              "RelativeDocumentMoniker": "Entities\\DTOs\\UserPaymentsDto.cs",
+              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\DTOs\\UserPaymentsDto.cs",
+              "RelativeToolTip": "Entities\\DTOs\\UserPaymentsDto.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAgwBYAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T10:56:52.284Z"
+              "WhenOpened": "2025-01-05T17:15:36.598Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CardManager.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\CardManager.cs",
-              "RelativeDocumentMoniker": "Business\\Concrete\\CardManager.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\CardManager.cs",
-              "RelativeToolTip": "Business\\Concrete\\CardManager.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAIAwwBUAAABMAAAA",
+              "DocumentIndex": 5,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Payment.cs",
+              "RelativeDocumentMoniker": "Entities\\Payment.cs",
+              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Payment.cs",
+              "RelativeToolTip": "Entities\\Payment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T13:19:06.711Z"
+              "WhenOpened": "2025-01-05T14:14:26.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PaymentStatus.cs",
+              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Concrete\\enums\\PaymentStatus.cs",
+              "RelativeDocumentMoniker": "Entities\\Concrete\\enums\\PaymentStatus.cs",
+              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Concrete\\enums\\PaymentStatus.cs",
+              "RelativeToolTip": "Entities\\Concrete\\enums\\PaymentStatus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T14:13:23.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PaymentManager.cs",
+              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\PaymentManager.cs",
+              "RelativeDocumentMoniker": "Business\\Concrete\\PaymentManager.cs",
+              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\PaymentManager.cs",
+              "RelativeToolTip": "Business\\Concrete\\PaymentManager.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAA7wEUAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T14:12:36.559Z",
+              "EditorCaption": ""
             }
           ]
         }

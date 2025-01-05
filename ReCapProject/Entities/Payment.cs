@@ -11,5 +11,6 @@ namespace Entities
         public int CardId { get; set; }
         public decimal TotalPrice {  get; set; }
         public PaymentStatus Status { get; set; }
+        public DateTime CreatedTime { get; set; }
     }
 }

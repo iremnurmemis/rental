@@ -141,12 +141,7 @@ namespace Business
                 var card = _cardDal.Get(c => c.Id == rental.CardId);
                 var userBilgi = _userService.GetById(rental.UserId).Data;
 
-              
-
-                // Ödeme işlemini yapıyoruz
-                var payment = await _iyzipayService.CreatePayment(card, userBilgi, rental, totalPrice);
-
-                // Ödeme kaydı yapılır
+                // Ödeme kaydını hemen ekliyoruz
                 var paymentRecord = new Payment
                 {
                     CardId = card.Id,
@@ -154,16 +149,20 @@ namespace Business
                     CarId = rental.CarId,
                     RentalId = rental.Id,
                     TotalPrice = totalPrice,
-                    Status = PaymentStatus.Failed
+                    Status = PaymentStatus.Failed, // Başlangıçta durum 'Failed' olarak atanabilir
+                    CreatedTime = DateTime.UtcNow,
                 };
 
                 _paymentDal.Add(paymentRecord);
 
+                // Ödeme işlemini yapıyoruz
+                var payment = await _iyzipayService.CreatePayment(card, userBilgi, rental, totalPrice);
 
-
-                // Eğer ödeme başarısızsa direkt hata döndürülür
+                // Eğer ödeme başarısızsa ödeme kaydını güncelliyoruz
                 if (payment.Status != "success")
                 {
+                    paymentRecord.Status = PaymentStatus.Failed;
+                    _paymentDal.Update(paymentRecord); // Durumu güncelliyoruz
                     return new ErrorResult($"Ödeme işlemi başarısız: {payment.ErrorMessage}");
                 }
 
@@ -172,8 +171,10 @@ namespace Business
                 {
                     try
                     {
-                        paymentRecord.Status = PaymentStatus.Success;
+                        paymentRecord.Status = PaymentStatus.Success; // Durum başarılı olarak güncelleniyor
+                        paymentRecord.CreatedTime = DateTime.UtcNow;
                         _paymentDal.Update(paymentRecord);
+
                         _carRental.Update(rental);
                         rental.Car.IsAvailable = true;
                         rental.Car.Latitude = rental.EndLatitude.GetValueOrDefault();
