@@ -56,6 +56,17 @@ namespace Business
             return new SuccessResult("card siliindi");
         }
 
+        public IDataResult<Card> GetCard(int cardId)
+        {
+            var card = _cardDal.Get(c => c.Id == cardId);
+            if (card == null)
+            {
+                return new ErrorDataResult<Card>("Kart bulunamadı.");
+            }
+
+            return new SuccessDataResult<Card>(card);
+        }
+
         public IDataResult<List<Card>> GetUserCards(int userId)
         {
             return new SuccessDataResult<List<Card>>(_cardDal.GetAll(c => c.UserId == userId)); 

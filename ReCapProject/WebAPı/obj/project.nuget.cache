@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cIfYveo4CVE=",
+  "dgSpecHash": "nFGri1I1fPY=",
   "success": true,
   "projectFilePath": "C:\\Users\\ılayda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAPı\\WebAPı.csproj",
   "expectedPackageFiles": [
@@ -11,7 +11,7 @@
     "C:\\Users\\ılayda\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\ılayda\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\ılayda\\.nuget\\packages\\fluentvalidation\\11.9.2\\fluentvalidation.11.9.2.nupkg.sha512",
-    "C:\\Users\\ılayda\\.nuget\\packages\\iyzipay\\2.1.65\\iyzipay.2.1.65.nupkg.sha512",
+    "C:\\Users\\ılayda\\.nuget\\packages\\iyzipay\\2.1.66\\iyzipay.2.1.66.nupkg.sha512",
     "C:\\Users\\ılayda\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\ılayda\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\ılayda\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",

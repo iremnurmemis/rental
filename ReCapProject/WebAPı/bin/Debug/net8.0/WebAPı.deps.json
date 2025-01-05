@@ -13,7 +13,7 @@
           "Core": "1.0.0",
           "DataAccess": "1.0.0",
           "Entities": "1.0.0",
-          "Iyzipay": "2.1.65",
+          "Iyzipay": "2.1.66",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.1",
           "Microsoft.Extensions.DependencyInjection": "8.0.1",
           "Swashbuckle.AspNetCore": "6.9.0",
@@ -113,14 +113,14 @@
           }
         }
       },
-      "Iyzipay/2.1.65": {
+      "Iyzipay/2.1.66": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.2"
         },
         "runtime": {
           "lib/netstandard2.1/Iyzipay.dll": {
-            "assemblyVersion": "2.1.65.0",
-            "fileVersion": "2.1.65.0"
+            "assemblyVersion": "2.1.66.0",
+            "fileVersion": "2.1.66.0"
           }
         }
       },
@@ -847,7 +847,7 @@
           "DataAccess": "1.0.0",
           "Entities": "1.0.0",
           "FluentValidation": "11.9.2",
-          "Iyzipay": "2.1.65",
+          "Iyzipay": "2.1.66",
           "Microsoft.AspNetCore.Authentication.Cookies": "2.2.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0"
         },
@@ -947,12 +947,12 @@
       "path": "fluentvalidation/11.9.2",
       "hashPath": "fluentvalidation.11.9.2.nupkg.sha512"
     },
-    "Iyzipay/2.1.65": {
+    "Iyzipay/2.1.66": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-sETm+AUYwfPN7Pzy8nor2NLI0J1tHFOuYfi69Z14WJI0LKDE5Qv8jx4+nCc4gzQ+IkNA/8unKjBadSGf/SQo4Q==",
-      "path": "iyzipay/2.1.65",
-      "hashPath": "iyzipay.2.1.65.nupkg.sha512"
+      "sha512": "sha512-9VXwKaLqO5I3EYo9Lk3x93QiARqYZO8CHqFxv+QudOz9V4lGs1hs8JVYFe40m/jTQ8QfHPKsnQm6ju3Qe8YroA==",
+      "path": "iyzipay/2.1.66",
+      "hashPath": "iyzipay.2.1.66.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "type": "package",

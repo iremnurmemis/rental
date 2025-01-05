@@ -1,0 +1,10 @@
+﻿
+
+namespace Entities
+{
+    public enum PaymentStatus
+    {
+        Success=0,
+        Failed=1
+    }
+}

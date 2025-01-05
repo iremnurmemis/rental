@@ -40,6 +40,7 @@ namespace Business
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(),Messages.CarListed);
         }
 
+
         public IDataResult<List<Car>> GetAll()
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll()
@@ -169,5 +170,7 @@ namespace Business
             return new SuccessDataResult<List<Brand>>(result, "markalar listelendi");
 
         }
+
+      
     }
 }

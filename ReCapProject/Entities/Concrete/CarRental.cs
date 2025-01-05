@@ -20,6 +20,8 @@ namespace Entities
         public double StartLatitude { get; set; }
         public double? EndLongitude { get; set; }
         public double? EndLatitude { get; set; }
+
+        public ICollection<Payment>? Payments { get; set; }
     }
 }
 

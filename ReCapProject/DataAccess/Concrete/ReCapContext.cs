@@ -27,6 +27,7 @@ namespace DataAccess
         public DbSet<Model> Models { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Card> Cards { get; set; }
+        public DbSet<Payment> Payments { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -85,6 +86,35 @@ namespace DataAccess
              .WithMany(c => c.CarRentals)     // Bir User'ın birden fazla Card'ı olabileceğini belirtiyoruz
              .HasForeignKey(c => c.CardId) // Card'daki UserId, User tablosuna dış anahtar olacak
              .OnDelete(DeleteBehavior.Cascade); // Kullanıcı silindiğinde ilişkili kartları da sileriz
+
+
+            modelBuilder.Entity<Payment>()
+           .HasOne<CarRental>()
+           .WithMany(c => c.Payments)
+           .HasForeignKey(p => p.RentalId)
+           .OnDelete(DeleteBehavior.Cascade);
+
+            // Payment -> Car (Bir ödeme bir araca bağlıdır)
+            modelBuilder.Entity<Payment>()
+                .HasOne<Car>()
+                .WithMany()
+                .HasForeignKey(p => p.CarId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Payment -> User (Bir ödeme bir kullanıcıya bağlıdır)
+            modelBuilder.Entity<Payment>()
+                .HasOne<User>()
+                .WithMany()
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Payment -> Card (Bir ödeme bir kart ile yapılır)
+            modelBuilder.Entity<Payment>()
+                .HasOne<Card>()
+                .WithMany()
+                .HasForeignKey(p => p.CardId)
+                .OnDelete(DeleteBehavior.Restrict);
+
 
             base.OnModelCreating(modelBuilder);
         }

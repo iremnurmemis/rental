@@ -108,7 +108,7 @@
           }
         }
       },
-      "Iyzipay/2.1.65": {
+      "Iyzipay/2.1.66": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.2"
@@ -1584,7 +1584,7 @@
           "DataAccess": "1.0.0",
           "Entities": "1.0.0",
           "FluentValidation": "11.9.2",
-          "Iyzipay": "2.1.65",
+          "Iyzipay": "2.1.66",
           "Microsoft.AspNetCore.Authentication.Cookies": "2.2.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0"
         },
@@ -1781,14 +1781,14 @@
         "lib/netstandard2.1/FluentValidation.xml"
       ]
     },
-    "Iyzipay/2.1.65": {
-      "sha512": "sETm+AUYwfPN7Pzy8nor2NLI0J1tHFOuYfi69Z14WJI0LKDE5Qv8jx4+nCc4gzQ+IkNA/8unKjBadSGf/SQo4Q==",
+    "Iyzipay/2.1.66": {
+      "sha512": "9VXwKaLqO5I3EYo9Lk3x93QiARqYZO8CHqFxv+QudOz9V4lGs1hs8JVYFe40m/jTQ8QfHPKsnQm6ju3Qe8YroA==",
       "type": "package",
-      "path": "iyzipay/2.1.65",
+      "path": "iyzipay/2.1.66",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "iyzipay.2.1.65.nupkg.sha512",
+        "iyzipay.2.1.66.nupkg.sha512",
         "iyzipay.nuspec",
         "lib/net45/Iyzipay.dll",
         "lib/netstandard2.1/Iyzipay.dll"

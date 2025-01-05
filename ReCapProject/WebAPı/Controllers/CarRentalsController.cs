@@ -1,6 +1,11 @@
 ﻿using Business;
+using Core.Interceptors.Utilities.Results;
+using Entities;
+using Entitiesü;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using System.Text.Json;
 
 namespace WebAPı.Controllers
 {
@@ -15,9 +20,10 @@ namespace WebAPı.Controllers
         }
 
         [HttpPost("AddCarRental")]
-        public IActionResult AddCarRental(int carId,int userId)
+        public IActionResult AddCarRental([FromBody] CarRentalRequest request)
         {
-            var result = _carRentalService.AddCarRental(carId, userId);
+            
+            var result = _carRentalService.AddCarRental(request.CarId,request.UserId,request.CardId);
             if (result.Success)
             {
                 return Ok(result);
@@ -26,15 +32,30 @@ namespace WebAPı.Controllers
         }
 
         [HttpPost("CompleteCarRental")]
-        public IActionResult CompleteCarRental(int rentalId)
+        public async Task<IActionResult> CompleteCarRental([FromBody] İadeRequest request)
         {
-            var result = _carRentalService.CompleteCarRental(rentalId);
+            var result = await _carRentalService.CompleteCarRental(request.rentalId);  // await kullanarak sonucu bekliyoruz
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
+
+        [HttpPost("updatecardıd")]
+        public IActionResult UpdateCardId([FromBody] UpdateCardIdRequest request)
+        {
+            var result = _carRentalService.UpdateCardId(request.cardId, request.rentalId);
+
+            if (result is ErrorResult)
+            {
+                return BadRequest(result.Message);  // Return bad request for error
+            }
+
+            return Ok(result.Message);  // Return success message
+        }
+
+
 
         //tüm kiralamlar
         [HttpGet("GetAllRentals")]
@@ -86,7 +107,7 @@ namespace WebAPı.Controllers
         }
 
         //usera ait kiralamlar
-        [HttpPost("GetUserCarRentals")]
+        [HttpGet("GetUserCarRentals")]
         public IActionResult GetUserCarRentals(int userId)
         {
             var result = _carRentalService.GetUserCarRentals(userId);
@@ -98,7 +119,7 @@ namespace WebAPı.Controllers
         }
 
         //usera ait aktif kiralamlar
-        [HttpPost("GetUserActiveCarRentals")]
+        [HttpGet("GetUserActiveCarRentals")]
         public IActionResult GetUserActiveCarRentals(int userId)
         {
             var result = _carRentalService.GetUserActiveCarRentals(userId);
@@ -110,7 +131,7 @@ namespace WebAPı.Controllers
         }
 
         //usera ait tamamlanmış kiralamlar
-        [HttpPost("GetUserCompletedCarRentals")]
+        [HttpGet("GetUserCompletedCarRentals")]
         public IActionResult GetUserCompletedCarRentals(int userId)
         {
             var result = _carRentalService.GetUserCompletedCarRentals(userId);
@@ -121,6 +142,42 @@ namespace WebAPı.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getUserActiveCarRentalsDetails")]
+        public IActionResult GetUserActiveCarRentalsDetails(int userId)
+        {
+            // Servisten gelen yanıtı alıyoruz
+            IDataResult<RentalDto> result = _carRentalService.GetUserActiveCarRentalsDetails(userId);
+
+            // Sonuç başarılıysa (Success)
+            if (result.Success)
+            {
+                return Ok(result.Data);  // 200 OK ve rental bilgileri ile dönüş yapılır
+            }
+            else
+            {
+                // Eğer bir hata oluşursa (Error)
+                return BadRequest(result.Message);  // 400 BadRequest ve hata mesajı döndürülür
+            }
+        }
+
+
+        [HttpGet("getUserAllCarRentalsDetails")]
+        public IActionResult GetUserAllCarRentalsDetails(int userId)
+        {
+            // Servisten gelen yanıtı alıyoruz
+            IDataResult<List<RentalDto>> result = _carRentalService.GetUserAllCarRentalsDetails(userId);
+
+          
+            if (result.Success)
+            {
+                return Ok(result.Data); 
+            }
+            else
+            {
+                // Eğer bir hata oluşursa (Error)
+                return BadRequest(result.Message);  
+            }
+        }
 
 
     }
