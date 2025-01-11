@@ -28,6 +28,7 @@ namespace DataAccess
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Card> Cards { get; set; }
         public DbSet<Payment> Payments { get; set; }
+        public DbSet<DriverLicence> DriverLicences { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -74,11 +75,7 @@ namespace DataAccess
              .HasForeignKey(c => c.UserId) // Card'daki UserId, User tablosuna dış anahtar olacak
              .OnDelete(DeleteBehavior.Cascade); // Kullanıcı silindiğinde ilişkili kartları da sileriz
 
-            //            modelBuilder.Entity<CarRental>()
-            //.HasOne(cr => cr.Card)
-            //.WithMany(c => c.CarRentals)
-            //.HasForeignKey(cr => cr.CardId)
-            //.OnDelete(DeleteBehavior.Cascade);
+         
 
 
             modelBuilder.Entity<CarRental>()
@@ -114,7 +111,6 @@ namespace DataAccess
                 .WithMany()
                 .HasForeignKey(p => p.CardId)
                 .OnDelete(DeleteBehavior.Restrict);
-
 
             base.OnModelCreating(modelBuilder);
         }

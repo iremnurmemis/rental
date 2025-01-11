@@ -88,6 +88,7 @@ namespace Business
                     PasswordSalt = passwordSalt,
                     PhoneNumber = userForRegisterDto.PhoneNumber,
                     Status = false, // false yap, ilk maille onaylasın
+                    TCKN=userForRegisterDto.TCKN,
                 };
 
                 _userService.Add(user);

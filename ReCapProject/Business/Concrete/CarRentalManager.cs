@@ -42,7 +42,19 @@ namespace Business
 
         public IResult AddCarRental(int carId, int userId,int cardId)
         {
-            // Kullanıcının zaten aktif bir kiralaması var mı kontrol et
+            // Kullanıcı bilgilerini al
+            var user = _userService.GetById(userId);
+            if (user == null)
+            {
+                return new ErrorResult("Kullanıcı bulunamadı.");
+            }
+
+            if (user.Data.IsDrivingLicenseVerified == false)
+            {
+                return new ErrorResult("Kiralamaya başlamadan önce Sürücü belgenizi sisteme yüklemelisiniz"); 
+            }
+
+
             var existingRental = _carRental.Get(cr => cr.UserId == userId && cr.RentalStatus == RentalStatus.Active);
             if (existingRental != null)
             {
@@ -56,12 +68,7 @@ namespace Business
                 return new ErrorResult("Araç şu anda uygun değil.");
             }
 
-            // Kullanıcı bilgilerini al
-            var user = _userService.GetById(userId);
-            if (user == null)
-            {
-                return new ErrorResult("Kullanıcı bulunamadı.");
-            }
+           
 
             // Tüm aracı JSON formatında yazdır
             Debug.WriteLine(JsonSerializer.Serialize(carAvailable, new JsonSerializerOptions { WriteIndented = true }));

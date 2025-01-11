@@ -1,7 +1,10 @@
 ﻿using Business;
+using Core.Interceptors.Utilities.Results;
 using DataAccess.Migrations;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using Tesseract;
 
 namespace WebAPı.Controllers
 {
@@ -10,9 +13,12 @@ namespace WebAPı.Controllers
     public class CarImagesController : ControllerBase
     {
         ICarImageService _carImageService;
+       
+
         public CarImagesController(ICarImageService carImageService)
         {
             _carImageService = carImageService;
+         
         }
 
         [HttpGet("GetAll")]
@@ -46,7 +52,7 @@ namespace WebAPı.Controllers
         [HttpPost("add")]
         public IActionResult Add(IFormFile file, [FromForm] int carId, [FromForm] bool IsMain)
         { //file ve carId lazım kullanıcı tarafından.
-            CarImage carImage = new() { CarId = carId,IsMain=IsMain };
+            CarImage carImage = new() { CarId = carId, IsMain = IsMain };
             var result = _carImageService.Add(file, carImage);
 
 
@@ -60,9 +66,9 @@ namespace WebAPı.Controllers
 
         [HttpPost("Update")]
         public IActionResult Update(IFormFile file, [FromForm] int Id)
-        { 
-            CarImage oldCarImage= _carImageService.GetById(Id).Data;
-            var result=_carImageService.Update(file, oldCarImage);
+        {
+            CarImage oldCarImage = _carImageService.GetById(Id).Data;
+            var result = _carImageService.Update(file, oldCarImage);
             if (result.Success)
             {
                 return Ok(result);
@@ -73,8 +79,8 @@ namespace WebAPı.Controllers
 
         [HttpPost("Delete")]
         public IActionResult Delete(CarImage carImage)
-        { 
-            
+        {
+
             var result = _carImageService.Delete(carImage);
             if (result.Success)
             {
@@ -83,11 +89,6 @@ namespace WebAPı.Controllers
             return BadRequest(result);
         }
 
-
-
-
-
-
-
+       
     }
 }

@@ -41,7 +41,9 @@ namespace Business
             builder.RegisterType<IyzipayManager>().As<IIyzipayService>().SingleInstance();
             builder.RegisterType<PaymentManager>().As<IPaymentService>().SingleInstance();
             builder.RegisterType<EfPaymentDal>().As<IPaymentDal>().SingleInstance();
-
+            builder.RegisterType<PythonOCRModelManager>().As<IOCRModelService>().SingleInstance();
+            builder.RegisterType<DriverLicenceManager>().As<IDriverLicenceService>().SingleInstance();
+            builder.RegisterType<EfDriverLicenceDal>().As<IDriverLicenceDal>().SingleInstance();
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 

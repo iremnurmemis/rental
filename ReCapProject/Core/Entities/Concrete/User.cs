@@ -15,8 +15,9 @@ namespace Core
         public bool Status { get; set; } = true;
         public string? Token { get; set; } //token email gönderme işlemleri içindir
 
-        //// Kartlarla ilişkilendirme
-        //public ICollection<Card> Cards { get; set; }
-
+        public bool IsDrivingLicenseVerified {  get; set; }
+        public string TCKN { get; set; }
+       
+       
     }
 }
