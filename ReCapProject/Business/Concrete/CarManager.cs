@@ -94,6 +94,7 @@ namespace Business
                               Transmission= car.Transmission.ToString(),
                               Model = model.Name,
                               Plate=car.Plate,
+                              PricePerDay=car.PricePerDay,
                               
                           }).ToList();
 
@@ -115,6 +116,7 @@ namespace Business
                              ModelName=model.Name,
                              CategoryName=category.Name,
                              PricePerHour=car.PricePerHour,
+                             PricePerDay=car.PricePerDay,
                              SeatCount=car.SeatCount,
                              Transmission=car.Transmission.ToString(),
                           }).ToList();

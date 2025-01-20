@@ -30,6 +30,9 @@ namespace Entities
         public string ModelName { get; set; }
         public string FuelTypeName {  get; set; }
         public string TranssmissionName {  get; set; }
+        public string RentalType { get; set; }
+        public DateTime? overdueEndDate{ get; set; }
+        public double? totalOverdueFee { get; set; }
 
     }
 }

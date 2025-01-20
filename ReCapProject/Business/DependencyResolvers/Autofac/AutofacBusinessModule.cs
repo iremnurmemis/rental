@@ -44,6 +44,13 @@ namespace Business
             builder.RegisterType<PythonOCRModelManager>().As<IOCRModelService>().SingleInstance();
             builder.RegisterType<DriverLicenceManager>().As<IDriverLicenceService>().SingleInstance();
             builder.RegisterType<EfDriverLicenceDal>().As<IDriverLicenceDal>().SingleInstance();
+            builder.RegisterType<ContactFormManager>().As<IContactFormService>().SingleInstance();
+            builder.RegisterType<EfContactFormDal>().As<IContactFormDal>().SingleInstance();
+            builder.RegisterType<BalancePackageManager>().As<IBalancePackageService>().SingleInstance();
+            builder.RegisterType<EfBalancePackageDal>().As<IBalancePackageDal>().SingleInstance();
+            builder.RegisterType<UserBalanceManager>().As<IUserBalanceService>().SingleInstance();
+            builder.RegisterType<EfUserBalanceDal>().As<IUserBalanceDal>().SingleInstance();
+
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 

@@ -1,5 +1,7 @@
 ﻿
 
+using Entities;
+
 namespace Entitiesü
 {
     public class CarRentalRequest
@@ -7,6 +9,8 @@ namespace Entitiesü
         public int CarId { get; set; }
         public int UserId { get; set; }
         public int CardId { get; set; }
+        public RentalType RentalType { get; set; }
+        public int? durationInDays {  get; set; }
     }
 
     public class İadeRequest

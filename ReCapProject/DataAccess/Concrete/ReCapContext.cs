@@ -29,6 +29,10 @@ namespace DataAccess
         public DbSet<Card> Cards { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<DriverLicence> DriverLicences { get; set; }
+        public DbSet<ContactForm> ContactForms { get; set; }
+        public DbSet<BalancePackage> BalancePackages { get; set; }
+
+        public DbSet<UserBalance> UserBalances { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

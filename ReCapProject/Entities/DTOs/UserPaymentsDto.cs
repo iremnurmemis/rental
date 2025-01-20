@@ -11,10 +11,10 @@ namespace Entities
         public string CardHolderName {  get; set; }
         public string CardNumber { get; set; }
         public int UserId {  get; set; }
-        public int RentalId {  get; set; }
+        public int? RentalId {  get; set; }
         public decimal RentalAmount { get; set; }
 
-        public int CarId {  get; set; }
+        public int? CarId {  get; set; }
         public string Category {  get; set; }
         public string Brand { get; set; }
         public string Model {  get; set; }

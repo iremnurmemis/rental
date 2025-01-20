@@ -39,21 +39,18 @@ namespace Business
            _iyzipayService=ıyzipayService;
         }
 
-
-        public IResult AddCarRental(int carId, int userId,int cardId)
+        public async Task<IResult> AddCarRental(int carId, int userId, int cardId, RentalType rentalType, int? durationInDays = null)
         {
-            // Kullanıcı bilgilerini al
             var user = _userService.GetById(userId);
             if (user == null)
             {
                 return new ErrorResult("Kullanıcı bulunamadı.");
             }
 
-            if (user.Data.IsDrivingLicenseVerified == false)
+            if (!user.Data.IsDrivingLicenseVerified)
             {
-                return new ErrorResult("Kiralamaya başlamadan önce Sürücü belgenizi sisteme yüklemelisiniz"); 
+                return new ErrorResult("Kiralamaya başlamadan önce Sürücü belgenizi sisteme yüklemelisiniz.");
             }
-
 
             var existingRental = _carRental.Get(cr => cr.UserId == userId && cr.RentalStatus == RentalStatus.Active);
             if (existingRental != null)
@@ -61,56 +58,150 @@ namespace Business
                 return new ErrorResult("Kullanıcının aktif bir kiralama işlemi zaten var.");
             }
 
-            // Arabayı doğrudan Car tablosundan kontrol et
-            var carAvailable = _car.Get(c => c.Id == carId); // carId'yi kullanmak daha mantıklı
+            var carAvailable = _car.Get(c => c.Id == carId && c.IsAvailable);
             if (carAvailable == null)
             {
                 return new ErrorResult("Araç şu anda uygun değil.");
             }
 
-           
+            decimal totalPrice = 0;
+            DateTime? endDate = null;
 
-            // Tüm aracı JSON formatında yazdır
-            Debug.WriteLine(JsonSerializer.Serialize(carAvailable, new JsonSerializerOptions { WriteIndented = true }));
-
-            //var preAuthResult = _paymentService.PreAuthorize(carAvailable.PricePerHour, cardId);
-            //if (!preAuthResult.Success)
-            //    return new ErrorResult(preAuthResult.Message);
-
-
-            using (var transactionScope = new TransactionScope())
+            // RentalType'e göre fiyat hesaplama
+            if (rentalType == RentalType.Daily)
             {
+                if (!durationInDays.HasValue || durationInDays.Value <= 0)
+                {
+                    return new ErrorResult("Geçerli bir günlük kiralama süresi belirtilmedi.");
+                }
+                totalPrice = carAvailable.PricePerDay * durationInDays.Value;
+                endDate = DateTime.UtcNow.AddDays(durationInDays.Value);
+            }
+           
+            // Kiralama modeline göre eğer saatlikse direkt aktif günnlükse ödeme işlemine bakar
+            var pendingRental = new CarRental
+            {
+                CarId = carId,
+                UserId = userId,
+                StartDate = DateTime.UtcNow,
+                EndDate = rentalType == RentalType.Daily ? endDate : null,
+                RentalStatus = rentalType == RentalType.Daily ? RentalStatus.Pending:RentalStatus.Active,
+                RentalType = rentalType,
+                DurationInDays = rentalType == RentalType.Daily ? durationInDays : null,
+                TotalPrice = rentalType == RentalType.Daily ? totalPrice : null,
+                CardId = cardId,
+                StartLatitude=carAvailable.Latitude,
+                StartLongitude=carAvailable.Longitude,
+            };
+
+            _carRental.Add(pendingRental);
+
+            if (rentalType == RentalType.Hourly)
+            {
+               
+                // Aracın durumu güncelleniyor
+                carAvailable.IsAvailable = false;
+                _car.Update(carAvailable);
+
+                // E-posta bildirimi gönder
+                var subject = "Araba Kiralama Onayı";
+                var body = $"Merhaba {user.Data.FirstName}, araba kiralama işleminiz başarılı.\n\nTeşekkür ederiz!";
+                _notificationService.SendNotification(user.Data.Email, subject, body);
+
+                return new SuccessDataResult<CarRental>(pendingRental, "Araç başarıyla kiralandı.");
+            }
+
+
+            // Ödeme işlemi yalnızca günlük için yapılacak
+            if (rentalType == RentalType.Daily )
+            {
+                var card = _cardDal.Get(c => c.Id == cardId);
+                if (card == null)
+                {
+                    return new ErrorResult("Kart bilgisi yanlış.");
+                }
+
+                // Ödeme kaydını oluştur
+                var paymentRecord = new Payment
+                {
+                    CardId = cardId,
+                    UserId = userId,
+                    CarId = carId,
+                    RentalId = pendingRental.Id, // Geçici kiralama ID'sini kullanıyoruz
+                    TotalPrice = totalPrice,
+                    Status = PaymentStatus.Pending, // Başlangıçta 'Pending'
+                    CreatedTime = DateTime.UtcNow,
+                    Type = PaymentType.Rental,
+                };
+
+                _paymentDal.Add(paymentRecord);
+
                 try
                 {
-                    var newCarRental = new CarRental
+                    var paymentResult = await _iyzipayService.CreatePayment(card, user.Data, pendingRental.Id, totalPrice);
+
+                    // Ödeme başarısızsa işlemi sonlandır
+                    if (paymentResult.Status != "success")
                     {
-                        CarId = carId,
-                        UserId = userId,
-                        StartDate = DateTime.UtcNow, // UTC zamanını kullanıyoruz
-                        RentalStatus = RentalStatus.Active,
-                        StartLatitude = carAvailable.Latitude,
-                        StartLongitude = carAvailable.Longitude,
-                        CardId = cardId,
-                    };
+                      
+                        paymentRecord.Status = PaymentStatus.Failed;
+                        _paymentDal.Update(paymentRecord);
 
-                    _carRental.Add(newCarRental);
+                        
+                        pendingRental.RentalStatus = RentalStatus.Failed;
+                        _carRental.Update(pendingRental);
 
-                    carAvailable.IsAvailable = false;
-                    _car.Update(carAvailable);
+                        return new ErrorResult($"Ödeme işlemi başarısız: {paymentResult.ErrorMessage}");
+                    }
+                    else
+                    {
+                        paymentRecord.Status = PaymentStatus.Success;
+                        _paymentDal.Update(paymentRecord);
+                    }
 
-                    // E-posta bildirimini gönder
-                    var subject = "Araba Kiralama Onayı";
-                    var body = $"Merhaba {user.Data.FirstName} araba kiralama işleminiz başarılı.\n\nTeşekkür ederiz!";
-                    _notificationService.SendNotification(user.Data.Email, subject, body);
+                    // Kiralama işlemi başarıyla tamamlanıyorsa
+                    using (var transactionScope = new TransactionScope())
+                    {
+                        try
+                        {
+                            // Kiralama durumu aktif yap
+                            pendingRental.RentalStatus = RentalStatus.Active;
+                            pendingRental.StartDate = DateTime.UtcNow;
+                            pendingRental.EndDate = rentalType == RentalType.Daily ? endDate : null;
+                            _carRental.Update(pendingRental);
 
-                    transactionScope.Complete();
-                    return new SuccessDataResult<CarRental>(newCarRental, "Araç başarıyla kiralandı.");
+                            // Aracın durumu güncelleniyor
+                            carAvailable.IsAvailable = false;
+                            _car.Update(carAvailable);
+
+                            // E-posta bildirimi gönder
+                            var subject = "Araba Kiralama Onayı";
+                            var body = $"Merhaba {user.Data.FirstName}, araba kiralama işleminiz başarılı.\n\nTeşekkür ederiz!";
+                            _notificationService.SendNotification(user.Data.Email, subject, body);
+
+                            transactionScope.Complete();
+                            return new SuccessDataResult<CarRental>(pendingRental, "Araç başarıyla kiralandı.");
+                        }
+                        catch (Exception ex)
+                        {
+                            return new ErrorResult($"Kiralama işlemi başarısız: {ex.Message}");
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
-                    return new ErrorResult($"Kiralama işlemi başarısız: {ex.Message}");
+                    paymentRecord.Status = PaymentStatus.Failed;
+                    _paymentDal.Update(paymentRecord);
+
+                    pendingRental.RentalStatus = RentalStatus.Failed;
+                    _carRental.Update(pendingRental);
+
+                    return new ErrorResult($"Ödeme işlemi sırasında hata oluştu: {ex.Message}");
                 }
             }
+
+            // Eğer kiralama tipi geçerli değilse, bir hata mesajı döndürüyoruz
+            return new ErrorResult("Geçersiz kiralama tipi.");
         }
 
         public async Task<IResult> CompleteCarRental(int rentalId)
@@ -128,86 +219,168 @@ namespace Business
             {
                 var carHourlyPrice = rental.Car.PricePerHour;
 
-                // End latitude, end longitude, end date ve total price ayarlanıyor
                 rental.EndLatitude = 41.043;
                 rental.EndLongitude = 29.0083;
-                rental.EndDate = DateTime.UtcNow;
-                rental.RentalStatus = RentalStatus.Completed;
 
-                if (rental.EndDate.HasValue)
+                // Eğer kiralama saatlikse, EndDate ve TotalPrice hesapla
+                if (rental.RentalType == RentalType.Hourly)
                 {
-                    var rentalDurationHours = (decimal)(rental.EndDate.Value - rental.StartDate).TotalHours;
-                    rental.TotalPrice = rentalDurationHours * carHourlyPrice;
+                    rental.EndDate = DateTime.UtcNow;
+
+                    if (rental.EndDate.HasValue)
+                    {
+                        var rentalDurationHours = (decimal)(rental.EndDate.Value - rental.StartDate).TotalHours;
+                        rental.TotalPrice = rentalDurationHours * carHourlyPrice;
+                    }
+                    else
+                    {
+                        return new ErrorResult("Başlangıç veya bitiş tarihi eksik, işlem tamamlanamıyor.");
+                    }
+
+                    var totalPrice = Convert.ToInt32(rental.TotalPrice.Value);
+                    var card = _cardDal.Get(c => c.Id == rental.CardId);
+                    var userBilgi = _userService.GetById(rental.UserId).Data;
+
+                    var paymentRecord = new Payment
+                    {
+                        CardId = card.Id,
+                        UserId = rental.UserId,
+                        CarId = rental.CarId,
+                        RentalId = rental.Id,
+                        TotalPrice = totalPrice,
+                        Status = PaymentStatus.Failed, // Başlangıçta durum 'Failed' olarak atanabilir
+                        CreatedTime = DateTime.UtcNow,
+                    };
+
+                    _paymentDal.Add(paymentRecord);
+
+                    // Ödeme işlemini yapıyoruz
+                    var payment = await _iyzipayService.CreatePayment(card, userBilgi, rental.Id, totalPrice);
+
+                    if (payment.Status != "success")
+                    {
+                        return new ErrorResult($"Ödeme işlemi başarısız: {payment.ErrorMessage}");
+                    }
+
+                    // Ödeme başarılıysa 
+                    paymentRecord.Status = PaymentStatus.Success;
+                    _paymentDal.Update(paymentRecord);
+
+                    using (var transactionScope = new TransactionScope())
+                    {
+                        try
+                        {
+                            rental.RentalStatus = RentalStatus.Completed;
+                            _carRental.Update(rental);
+                            rental.Car.IsAvailable = true;
+                            rental.Car.Latitude = rental.EndLatitude.GetValueOrDefault();
+                            rental.Car.Longitude = rental.EndLongitude.GetValueOrDefault();
+                            _car.Update(rental.Car);
+
+                            // E-posta bildirimini gönder
+                            var subject = "Araba İadesi";
+                            var body = $"Merhaba {user.Data.FirstName}, araba iade işleminiz başarılı.\n\nTeşekkür ederiz!";
+                            _notificationService.SendNotification(user.Data.Email, subject, body);
+
+                            transactionScope.Complete();
+                            return new SuccessResult("İade işlemi başarıyla tamamlandı.");
+                        }
+                        catch (Exception ex)
+                        {
+                            return new ErrorResult($"İade işlemi sırasında bir hata oluştu: {ex.Message}");
+                        }
+                    }
+                }
+                else if (rental.RentalType == RentalType.Daily)
+                {
+                    if (rental.EndDate.HasValue && rental.EndDate.Value <= DateTime.UtcNow)
+                    {
+                        // Aşım ücreti hesapla
+                        var overdueDuration = DateTime.UtcNow - rental.EndDate.Value;
+                        var overdueHours = Math.Ceiling(overdueDuration.TotalHours);
+
+                        // Eğer aşım olmuşsa, sadece aşım ücretini ekle
+                        if (overdueHours > 0)
+                        {
+                            var overdueFee = (decimal)overdueHours * (decimal)carHourlyPrice;
+
+                            // Aşım ücreti ödeme kaydına ekle
+                            var totalOverdueFee = Convert.ToInt32(overdueFee);
+
+                            // Ödeme işlemi için veritabanına ödeme kaydını ekleyelim
+                            var card = _cardDal.Get(c => c.Id == rental.CardId);
+                            var userBilgi = _userService.GetById(rental.UserId).Data;
+
+                            var paymentRecord = new Payment
+                            {
+                                CardId = card.Id,
+                                UserId = rental.UserId,
+                                CarId = rental.CarId,
+                                RentalId = rental.Id,
+                                TotalPrice = totalOverdueFee, // Sadece aşım ücreti
+                                Status = PaymentStatus.Failed,
+                                CreatedTime = DateTime.UtcNow,
+                                Type=PaymentType.Rental,
+                            };
+
+                            _paymentDal.Add(paymentRecord);
+
+                            // Ödeme işlemi
+                            var payment = await _iyzipayService.CreatePayment(card, userBilgi, rental.Id, totalOverdueFee);
+
+                            if (payment.Status != "success")
+                            {
+                                return new ErrorResult($"Ödeme işlemi başarısız: {payment.ErrorMessage}");
+                            }
+
+                            paymentRecord.Status = PaymentStatus.Success;
+                            _paymentDal.Update(paymentRecord);
+                            rental.overdueEndDate = DateTime.UtcNow;
+                            rental.totalOverdueFee = totalOverdueFee;
+                        }
+
+                        using (var transactionScope = new TransactionScope())
+                        {
+                            try
+                            {
+                               
+                                rental.RentalStatus = RentalStatus.Completed;
+                                _carRental.Update(rental);
+                                rental.Car.IsAvailable = true;
+                                rental.Car.Latitude = rental.EndLatitude.GetValueOrDefault();
+                                rental.Car.Longitude = rental.EndLongitude.GetValueOrDefault();
+                                _car.Update(rental.Car);
+
+                                // E-posta bildirimini gönder
+                                var subject = "Araba İadesi";
+                                var body = $"Merhaba {user.Data.FirstName}, araba iade işleminiz başarılı.\n\nTeşekkür ederiz!";
+                                _notificationService.SendNotification(user.Data.Email, subject, body);
+
+                                transactionScope.Complete();
+                                return new SuccessResult("İade işlemi başarıyla tamamlandı.");
+                            }
+                            catch (Exception ex)
+                            {
+                                return new ErrorResult($"İade işlemi sırasında bir hata oluştu: {ex.Message}");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        return new ErrorResult("Kiralama süresi henüz bitmedi.");
+                    }
                 }
                 else
                 {
-                    return new ErrorResult("Başlangıç veya bitiş tarihi eksik, işlem tamamlanamıyor.");
+                    return new ErrorResult("Geçersiz kiralama tipi.");
                 }
 
-                var totalPrice = Convert.ToInt32(rental.TotalPrice.Value);
-                var card = _cardDal.Get(c => c.Id == rental.CardId);
-                var userBilgi = _userService.GetById(rental.UserId).Data;
-
-                // Ödeme kaydını hemen ekliyoruz
-                var paymentRecord = new Payment
-                {
-                    CardId = card.Id,
-                    UserId = rental.UserId,
-                    CarId = rental.CarId,
-                    RentalId = rental.Id,
-                    TotalPrice = totalPrice,
-                    Status = PaymentStatus.Failed, // Başlangıçta durum 'Failed' olarak atanabilir
-                    CreatedTime = DateTime.UtcNow,
-                };
-
-                _paymentDal.Add(paymentRecord);
-
-                // Ödeme işlemini yapıyoruz
-                var payment = await _iyzipayService.CreatePayment(card, userBilgi, rental, totalPrice);
-
-                // Eğer ödeme başarısızsa ödeme kaydını güncelliyoruz
-                if (payment.Status != "success")
-                {
-                    paymentRecord.Status = PaymentStatus.Failed;
-                    _paymentDal.Update(paymentRecord); // Durumu güncelliyoruz
-                    return new ErrorResult($"Ödeme işlemi başarısız: {payment.ErrorMessage}");
-                }
-
-                // Ödeme başarılıysa işlem devam eder
-                using (var transactionScope = new TransactionScope())
-                {
-                    try
-                    {
-                        paymentRecord.Status = PaymentStatus.Success; // Durum başarılı olarak güncelleniyor
-                        paymentRecord.CreatedTime = DateTime.UtcNow;
-                        _paymentDal.Update(paymentRecord);
-
-                        _carRental.Update(rental);
-                        rental.Car.IsAvailable = true;
-                        rental.Car.Latitude = rental.EndLatitude.GetValueOrDefault();
-                        rental.Car.Longitude = rental.EndLongitude.GetValueOrDefault();
-                        _car.Update(rental.Car);
-
-                        // E-posta bildirimini gönder
-                        var subject = "Araba İadesi";
-                        var body = $"Merhaba {user.Data.FirstName}, araba iade işleminiz başarılı.\n\nTeşekkür ederiz!";
-                        _notificationService.SendNotification(user.Data.Email, subject, body);
-
-                        transactionScope.Complete();
-                        return new SuccessResult("İade işlemi başarıyla tamamlandı.");
-                    }
-                    catch (Exception ex)
-                    {
-                        return new ErrorResult($"İade işlemi sırasında bir hata oluştu: {ex.Message}");
-                    }
-                }
             }
             catch (Exception ex)
             {
                 return new ErrorResult($"İade işlemi başarısız: {ex.Message}");
             }
         }
-
 
 
         public IResult GetAllCarRentals()
@@ -300,6 +473,7 @@ namespace Business
                                   ModelName = m.Name,
                                   FuelTypeName=c.FuelType.ToString(),
                                   TranssmissionName=c.Transmission.ToString(),
+                                  RentalType=cr.RentalType.ToString(),
                               }).FirstOrDefault();
 
                 if (rental != null)
@@ -362,6 +536,9 @@ namespace Business
                                    ModelName = m.Name,
                                    FuelTypeName = c.FuelType.ToString(),
                                    TranssmissionName = c.Transmission.ToString(),
+                                   RentalType=cr.RentalType.ToString(),
+                                   overdueEndDate=cr.overdueEndDate,
+                                   totalOverdueFee=cr.totalOverdueFee,
                                }).ToList();
 
                 if (rentals.Any())

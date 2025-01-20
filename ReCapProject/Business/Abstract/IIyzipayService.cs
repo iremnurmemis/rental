@@ -9,7 +9,7 @@ namespace Business
     public interface IIyzipayService
     {
         Task<string> CreateCardToken(CreatCardTokenDto creatCardTokenDto);
-        Task<Iyzipay.Model.Payment> CreatePayment(Entities.Card card,User user,CarRental carRental,decimal totalPrice);
+        Task<Iyzipay.Model.Payment> CreatePayment(Entities.Card card,User user,int processId,decimal totalPrice);
 
 
 

@@ -7,7 +7,7 @@ namespace Business
 {
     public interface ICarRentalService
     {
-        IResult AddCarRental(int carId, int userId,int cardId);             // Kiralama ekleme işlemi
+        Task<IResult> AddCarRental(int carId, int userId,int cardId, RentalType rentalType, int? durationInDays = null);             // Kiralama ekleme işlemi
         Task<IResult> CompleteCarRental(int rentalId);                  // Kiralamayı iade veya tamamlanmış olarak işaretleme
         IResult GetAllCarRentals();                               // Tüm kiralama kayıtlarını alma
         //IResult GetAllCarRentalsWithDetails();                    // Tüm kiralama kayıtlarını araba bilgileriyle alma

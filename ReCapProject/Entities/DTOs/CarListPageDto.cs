@@ -12,6 +12,7 @@ namespace Entities
         public string ModelName {  get; set; }
         public string CategoryName {  get; set; }
         public decimal PricePerHour {  get; set; }
+        public decimal PricePerDay { get; set; }
         public int SeatCount {  get; set; }
         public string Transmission { get; set; }
     }

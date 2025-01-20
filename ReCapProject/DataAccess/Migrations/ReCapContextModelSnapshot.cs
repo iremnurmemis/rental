@@ -107,6 +107,29 @@ namespace DataAccess.Migrations
                     b.ToTable("UserOperationClaims");
                 });
 
+            modelBuilder.Entity("Entities.BalancePackage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("CreditAmount")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("numeric");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BalancePackages");
+                });
+
             modelBuilder.Entity("Entities.Brand", b =>
                 {
                     b.Property<int>("Id")
@@ -160,6 +183,9 @@ namespace DataAccess.Migrations
                     b.Property<string>("Plate")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<decimal>("PricePerDay")
+                        .HasColumnType("numeric");
 
                     b.Property<decimal>("PricePerHour")
                         .HasColumnType("numeric");
@@ -226,6 +252,9 @@ namespace DataAccess.Migrations
                     b.Property<int?>("CardId")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("DurationInDays")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("timestamp with time zone");
 
@@ -238,6 +267,9 @@ namespace DataAccess.Migrations
                     b.Property<string>("RentalStatus")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int>("RentalType")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("timestamp with time zone");
@@ -253,6 +285,12 @@ namespace DataAccess.Migrations
 
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
+
+                    b.Property<DateTime?>("overdueEndDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<double?>("totalOverdueFee")
+                        .HasColumnType("double precision");
 
                     b.HasKey("Id");
 
@@ -330,6 +368,45 @@ namespace DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Colors");
+                });
+
+            modelBuilder.Entity("Entities.ContactForm", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ContactText")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreateTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ContactForms");
                 });
 
             modelBuilder.Entity("Entities.DriverLicence", b =>
@@ -410,7 +487,10 @@ namespace DataAccess.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CarId")
+                    b.Property<int?>("BalancePackageId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("CarId")
                         .HasColumnType("integer");
 
                     b.Property<int>("CardId")
@@ -419,7 +499,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("CreatedTime")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("RentalId")
+                    b.Property<int?>("RentalId")
                         .HasColumnType("integer");
 
                     b.Property<int>("Status")
@@ -427,6 +507,9 @@ namespace DataAccess.Migrations
 
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("numeric");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("integer");
 
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
@@ -467,6 +550,28 @@ namespace DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Rentals");
+                });
+
+            modelBuilder.Entity("Entities.UserBalance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("numeric");
+
+                    b.Property<DateTime>("LastUpdated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserBalances");
                 });
 
             modelBuilder.Entity("Core.UserOperationClaim", b =>
@@ -545,8 +650,7 @@ namespace DataAccess.Migrations
                     b.HasOne("Entities.Car", null)
                         .WithMany()
                         .HasForeignKey("CarId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Entities.Card", null)
                         .WithMany()
@@ -557,8 +661,7 @@ namespace DataAccess.Migrations
                     b.HasOne("Entities.CarRental", null)
                         .WithMany("Payments")
                         .HasForeignKey("RentalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Core.User", null)
                         .WithMany()

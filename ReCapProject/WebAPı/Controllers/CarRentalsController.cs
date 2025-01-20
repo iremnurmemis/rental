@@ -20,10 +20,10 @@ namespace WebAPı.Controllers
         }
 
         [HttpPost("AddCarRental")]
-        public IActionResult AddCarRental([FromBody] CarRentalRequest request)
+        public async Task<IActionResult> AddCarRental([FromBody] CarRentalRequest request)
         {
             
-            var result = _carRentalService.AddCarRental(request.CarId,request.UserId,request.CardId);
+            var result = await _carRentalService.AddCarRental(request.CarId,request.UserId,request.CardId,request.RentalType,request.durationInDays);
             if (result.Success)
             {
                 return Ok(result);

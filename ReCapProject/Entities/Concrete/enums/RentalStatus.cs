@@ -2,6 +2,7 @@
 {
     Active=0,
     Completed=1,
-    Cancelled=1
+    Pending=2,
+    Failed=3,
 
 }

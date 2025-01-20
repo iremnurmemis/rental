@@ -68,7 +68,7 @@ namespace Business
 
         }
 
-        public async Task<Iyzipay.Model.Payment> CreatePayment(Entities.Card card,User user,CarRental rental,decimal totalPrice)
+        public async Task<Iyzipay.Model.Payment> CreatePayment(Entities.Card card,User user,int processId,decimal totalPrice)
         {
             Options options = _options;
             
@@ -129,7 +129,7 @@ namespace Business
                 {
                     new BasketItem
                     {
-                        Id = rental.Id.ToString(),
+                        Id = processId.ToString(),
                         Name = "Car Rental",
                         Category1 = "Rentals",
                         Category2 = "Vehicles",

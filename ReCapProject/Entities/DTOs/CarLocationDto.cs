@@ -15,6 +15,7 @@ namespace Entities
         public int BrandId { get; set; }
         public int CategoryId { get; set; }
         public decimal PricePerHour { get; set; }
+        public decimal PricePerDay { get; set; }
         public int SeatCount { get; set; }
         public string Transmission { get; set; }
         public string Plate { get; set; }

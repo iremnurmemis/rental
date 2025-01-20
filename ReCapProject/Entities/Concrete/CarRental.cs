@@ -14,6 +14,10 @@ namespace Entities
         public Card Card { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }
+        public RentalType RentalType { get; set; } // Saatlik veya günlük kiralama türü
+        public int? DurationInDays { get; set; } // Günlük kiralama süresi
+        public DateTime? overdueEndDate {  get; set; }
+       public double? totalOverdueFee {  get; set; }
         public decimal? TotalPrice { get; set; }
         public RentalStatus RentalStatus { get; set; }
         public double StartLongitude {  get; set; }

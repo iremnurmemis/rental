@@ -15,12 +15,12 @@ namespace Entities
        public bool IsAvailable {  get; set; }
        public FuelType FuelType { get; set; }
        public Transmission Transmission { get; set; }
-       public decimal PricePerHour {  get; set; }
+       public decimal PricePerHour {  get; set; } // Saatlik kiralama modeli için aracın saatlik fiyatı 
+       public decimal PricePerDay { get; set; } // Günlük kiiralama modeli için aracın günlük fiyatı
        public int SeatCount { get; set; }
 
-      //konum
-      public double Latitude {  get; set; }
-      public double Longitude { get; set; }
+       public double Latitude {  get; set; }
+       public double Longitude { get; set; }
 
       // Bir araba birden fazla resme sahip olabilir.
        public ICollection<CarImage>? CarImages { get; set; }
@@ -28,7 +28,7 @@ namespace Entities
        // Bir araba birçok kez kiralanabilir.
        public ICollection<CarRental>? CarRentals { get; set; }
 
-        public CarImage? MainImage {  get; set; }   
+       public CarImage? MainImage {  get; set; }   
         
 
     }
