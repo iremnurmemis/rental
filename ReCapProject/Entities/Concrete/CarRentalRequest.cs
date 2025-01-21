@@ -11,6 +11,7 @@ namespace Entitiesü
         public int CardId { get; set; }
         public RentalType RentalType { get; set; }
         public int? durationInDays {  get; set; }
+        public bool? useBalance { get; set; }
     }
 
     public class İadeRequest

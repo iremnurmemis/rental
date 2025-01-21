@@ -23,7 +23,7 @@ namespace WebAPı.Controllers
         public async Task<IActionResult> AddCarRental([FromBody] CarRentalRequest request)
         {
             
-            var result = await _carRentalService.AddCarRental(request.CarId,request.UserId,request.CardId,request.RentalType,request.durationInDays);
+            var result = await _carRentalService.AddCarRental(request.CarId,request.UserId,request.CardId,request.RentalType,request.durationInDays,request.useBalance);
             if (result.Success)
             {
                 return Ok(result);

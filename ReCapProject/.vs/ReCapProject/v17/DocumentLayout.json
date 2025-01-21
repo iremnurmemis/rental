@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{251540DC-B946-40BC-9151-4710DCEA3AC1}|WebAP\u0131\\WebAP\u0131.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\webap\u0131\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{251540DC-B946-40BC-9151-4710DCEA3AC1}|WebAP\u0131\\WebAP\u0131.csproj|solutionrelative:webap\u0131\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\business\\concrete\\authmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|solutionrelative:business\\concrete\\authmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{251540DC-B946-40BC-9151-4710DCEA3AC1}|WebAP\u0131\\WebAP\u0131.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\webap\u0131\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{251540DC-B946-40BC-9151-4710DCEA3AC1}|WebAP\u0131\\WebAP\u0131.csproj|solutionrelative:webap\u0131\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\business\\concrete\\carrentalmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|solutionrelative:business\\concrete\\carrentalmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{251540DC-B946-40BC-9151-4710DCEA3AC1}|WebAP\u0131\\WebAP\u0131.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\webap\u0131\\controllers\\userbalancesconntroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{251540DC-B946-40BC-9151-4710DCEA3AC1}|WebAP\u0131\\WebAP\u0131.csproj|solutionrelative:webap\u0131\\controllers\\userbalancesconntroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\entities\\concrete\\enums\\rentaltype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|solutionrelative:entities\\concrete\\enums\\rentaltype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\business\\concrete\\userbalancemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|solutionrelative:business\\concrete\\userbalancemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{251540DC-B946-40BC-9151-4710DCEA3AC1}|WebAP\u0131\\WebAP\u0131.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\webap\u0131\\controllers\\carrentalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{251540DC-B946-40BC-9151-4710DCEA3AC1}|WebAP\u0131\\WebAP\u0131.csproj|solutionrelative:webap\u0131\\controllers\\carrentalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\entities\\dtos\\loadbalancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|solutionrelative:entities\\dtos\\loadbalancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\entities\\concrete\\carrentalrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76A88340-7483-49A1-8D9F-9887058A3F71}|Entities\\Entities.csproj|solutionrelative:entities\\concrete\\carrentalrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|c:\\users\\\u0131layda\\source\\repos\\rentaldeneme\\recapproject\\business\\abstract\\icarrentalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94DCCFD9-D13C-487C-8396-31F1FE7C2D33}|Business\\Business.csproj|solutionrelative:business\\abstract\\icarrentalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,66 +43,75 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAP\u0131\\Program.cs",
-              "RelativeDocumentMoniker": "WebAP\u0131\\Program.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAP\u0131\\Program.cs",
-              "RelativeToolTip": "WebAP\u0131\\Program.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAQwD0AAAARAAAA",
+              "Title": "AuthManager.cs",
+              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\AuthManager.cs",
+              "RelativeDocumentMoniker": "Business\\Concrete\\AuthManager.cs",
+              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\AuthManager.cs",
+              "RelativeToolTip": "Business\\Concrete\\AuthManager.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAYwA4AAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T20:41:46.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAP\u0131\\appsettings.json",
-              "RelativeDocumentMoniker": "WebAP\u0131\\appsettings.json",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAP\u0131\\appsettings.json",
-              "RelativeToolTip": "WebAP\u0131\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-20T20:36:41.094Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserBalanceManager.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\UserBalanceManager.cs",
-              "RelativeDocumentMoniker": "Business\\Concrete\\UserBalanceManager.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\UserBalanceManager.cs",
-              "RelativeToolTip": "Business\\Concrete\\UserBalanceManager.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAIAwwFEAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T18:02:03.931Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoadBalanceDto.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\DTOs\\LoadBalanceDto.cs",
-              "RelativeDocumentMoniker": "Entities\\DTOs\\LoadBalanceDto.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\DTOs\\LoadBalanceDto.cs",
-              "RelativeToolTip": "Entities\\DTOs\\LoadBalanceDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T20:04:31.241Z",
+              "WhenOpened": "2025-01-21T19:31:36.362Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UserBalancesConntroller.cs",
-              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAP\u0131\\Controllers\\UserBalancesConntroller.cs",
-              "RelativeDocumentMoniker": "WebAP\u0131\\Controllers\\UserBalancesConntroller.cs",
-              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAP\u0131\\Controllers\\UserBalancesConntroller.cs",
-              "RelativeToolTip": "WebAP\u0131\\Controllers\\UserBalancesConntroller.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABsAAAAIAAAA",
+              "Title": "RentalType.cs",
+              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Concrete\\enums\\RentalType.cs",
+              "RelativeDocumentMoniker": "Entities\\Concrete\\enums\\RentalType.cs",
+              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Concrete\\enums\\RentalType.cs",
+              "RelativeToolTip": "Entities\\Concrete\\enums\\RentalType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T19:50:40.769Z",
+              "WhenOpened": "2025-01-21T12:06:26.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CarRentalRequest.cs",
+              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Concrete\\CarRentalRequest.cs",
+              "RelativeDocumentMoniker": "Entities\\Concrete\\CarRentalRequest.cs",
+              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Entities\\Concrete\\CarRentalRequest.cs",
+              "RelativeToolTip": "Entities\\Concrete\\CarRentalRequest.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T12:04:06.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CarRentalsController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAP\u0131\\Controllers\\CarRentalsController.cs",
+              "RelativeDocumentMoniker": "WebAP\u0131\\Controllers\\CarRentalsController.cs",
+              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\WebAP\u0131\\Controllers\\CarRentalsController.cs",
+              "RelativeToolTip": "WebAP\u0131\\Controllers\\CarRentalsController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAzwBUAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T12:03:58.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ICarRentalService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Abstract\\ICarRentalService.cs",
+              "RelativeDocumentMoniker": "Business\\Abstract\\ICarRentalService.cs",
+              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Abstract\\ICarRentalService.cs",
+              "RelativeToolTip": "Business\\Abstract\\ICarRentalService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T11:44:36.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CarRentalManager.cs",
+              "DocumentMoniker": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\CarRentalManager.cs",
+              "RelativeDocumentMoniker": "Business\\Concrete\\CarRentalManager.cs",
+              "ToolTip": "C:\\Users\\\u0131layda\\source\\repos\\rentaldeneme\\ReCapProject\\Business\\Concrete\\CarRentalManager.cs",
+              "RelativeToolTip": "Business\\Concrete\\CarRentalManager.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T10:04:59.71Z",
               "EditorCaption": ""
             }
           ]
