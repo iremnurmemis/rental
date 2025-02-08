@@ -1,5 +1,7 @@
 ﻿using Business;
+using Core;
 using DataAccess;
+using DataAccess.Migrations;
 using Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -19,9 +21,15 @@ namespace WebAPı.Controllers
     public class CarsController : ControllerBase
     {
         ICarService _carService;
-        public CarsController(ICarService carService)
+        ICarDal _carDal;
+        IFileHelper _fileHelper;
+        ICarImageDal _carImageDal;
+        public CarsController(ICarService carService,ICarImageDal carImageDal,ICarDal carDal,IFileHelper fileHelper)
         {
             _carService = carService;
+            _carDal = carDal;
+            _fileHelper = fileHelper;
+            _carImageDal = carImageDal;
         }
 
         //[HttpGet]
@@ -122,6 +130,15 @@ namespace WebAPı.Controllers
         }
 
 
+        [HttpGet("GetCarDetail")]
+        public IActionResult GetCarDetail(int carId)
+        {
+            var cars = _carService.GetCarDetail(carId);
+            if (cars.Success)
+                return Ok(cars);
+            return BadRequest(cars);
+        }
+
 
 
         [HttpGet("GetByCarId")]
@@ -145,9 +162,9 @@ namespace WebAPı.Controllers
         }
 
         [HttpPost("Delete")]
-        public IActionResult Delete(Car car)
+        public IActionResult Delete(int carId)
         {
-            var result = _carService.Delete(car);
+            var result = _carService.Delete(carId);
             if (result.Success)
             {
                 return Ok(result);
@@ -272,6 +289,30 @@ namespace WebAPı.Controllers
             }
             return BadRequest(result.Message);
         }
+
+        [HttpPost("add-with-images")]
+        public async Task<IActionResult> AddCarWithImages([FromForm] Car car, [FromForm] List<IFormFile> images)
+        {
+            _carDal.Add(car);
+
+            foreach (var image in images)
+            {
+                if (image.Length > 0)
+                {
+                    string imagePath = _fileHelper.Add(image);
+                    var carImage = new CarImage
+                    {
+                        CarId = car.Id,
+                        ImagePath = imagePath,
+                        Date = DateTime.Now
+                    };
+                    _carImageDal.Add(carImage);
+                }
+            }
+
+            return Ok(new { message = "Car added successfully" });
+        }
+
 
     }
 }

@@ -15,8 +15,9 @@ namespace Business
         private readonly IBalancePackageDal _balancePackageDal;
         private  readonly IIyzipayService _iyzipayService;
         private readonly IPaymentDal _paymentDal;
+        private readonly IDriverLicenceDal _driverLicenceDal;
 
-        public UserBalanceManager(IUserBalanceDal userBalanceDal,IUserDal userDal,ICardDal cardDal,IBalancePackageDal balancePackageDal,IIyzipayService ıyzipayService,IPaymentDal paymentDal)
+        public UserBalanceManager(IUserBalanceDal userBalanceDal,IUserDal userDal,ICardDal cardDal,IBalancePackageDal balancePackageDal,IIyzipayService ıyzipayService,IPaymentDal paymentDal,IDriverLicenceDal driverLicenceDal)
         {
             _userBalanceDal = userBalanceDal;
             _userDal = userDal; 
@@ -24,6 +25,7 @@ namespace Business
             _cardDal = cardDal;
             _iyzipayService=ıyzipayService;
             _paymentDal= paymentDal;
+            _driverLicenceDal= driverLicenceDal;
         }
 
         
@@ -128,5 +130,41 @@ namespace Business
             return new SuccessResult("Bakiye başarıyla yüklendi.");
 
         }
+
+        public IDataResult<UserDetailDto> GetDetail(int userId)
+        {
+            
+            var user = _userDal.Get(u => u.Id == userId);
+            if (user == null)
+            {
+                return new ErrorDataResult<UserDetailDto>("User not found.");
+            }
+
+            var userBalance = _userBalanceDal.Get(ub => ub.UserId == userId);
+            var driverLicence = _driverLicenceDal.Get(dl => dl.UserId == userId);
+
+  
+            if (userBalance == null)
+            {
+                return new ErrorDataResult<UserDetailDto>("User balance not found.");
+            }
+
+            var userDetailDto = new UserDetailDto
+            {
+                userId = user.Id,
+                fullname = user.FirstName + ' '+  user.LastName,
+                email = user.Email,
+                phone = user.PhoneNumber,
+                status = user.Status,
+                balance = userBalance.Balance,
+                ısLicenceVerified = user.IsDrivingLicenseVerified,
+                LicenceNo = driverLicence?.LicenceNo,
+                ValidUntil = driverLicence?.ValidUntil,
+                UploadDate = driverLicence?.UploadDate
+            };
+
+            return new SuccessDataResult<UserDetailDto>(userDetailDto, "User details fetched successfully.");
+        }
+
     }
 }

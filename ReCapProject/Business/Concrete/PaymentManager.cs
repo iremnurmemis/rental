@@ -62,12 +62,87 @@ namespace Business
                                     CardHolderName = card.CardHolderName,
                                     CardNumber = card.CardNumber,
                                     RentalAmount = payment.TotalPrice,
-                                    Status = payment.Status,
+                                    Status = payment.Status.ToString(),
                                     UserId = payment.UserId,
                                     Plate = car.Plate,
                                     Brand = brand.Name,
                                     Model = model.Name,
                                     Created=payment.CreatedTime,
+                                    PaymentType= payment.Type.ToString(),
+                                    balancePackageId=payment.BalancePackageId,
+                                    totalPrice=payment.TotalPrice,
+                                   
+
+                                }).ToList();
+
+                if (payments.Any())
+                {
+                    return new SuccessDataResult<List<UserPaymentsDto>>(payments);
+                }
+                else
+                {
+                    return new ErrorDataResult<List<UserPaymentsDto>>("Bu kullanıcıya ait ödeme bulunamadı.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Loglama işlemi yapılabilir (ex kullanılarak hata detayı kaydedilebilir)
+                return new ErrorDataResult<List<UserPaymentsDto>>("Ödeme bilgileri alınırken bir hata oluştu.");
+            }
+        }
+
+        public IDataResult<List<UserPaymentsDto>> GetAllPaymentsFront()
+        {
+            try
+            {
+                var payments = (from payment in _paymentDal.GetAll()
+                               join card in _cardDal.GetAll() on payment.CardId equals card.Id
+                               select new UserPaymentsDto
+                               {
+                                   Id = payment.Id,
+                                   UserId = payment.UserId,
+                                   totalPrice = payment.TotalPrice,
+                                   CardNumber=card.CardNumber,
+                                   Created= payment.CreatedTime,
+                                   Status=payment.Status.ToString(),
+                                   PaymentType= payment.Type.ToString(),
+                                   RentalId=payment.RentalId,
+                                   balancePackageId= payment.BalancePackageId,
+
+                               }).ToList();
+
+                if (payments.Any())
+                {
+                    return new SuccessDataResult<List<UserPaymentsDto>>(payments);
+                }
+                else
+                {
+                    return new ErrorDataResult<List<UserPaymentsDto>>(" ödeme bulunamadı.");
+                }
+            }
+            catch (Exception ex) 
+            {
+                return new ErrorDataResult<List<UserPaymentsDto>>("Ödeme bilgileri alınırken bir hata oluştu.");
+            }
+        }       
+
+           public IDataResult<List<UserPaymentsDto>> GetAllPaymentByUserIdFrontend(int userId)
+        {
+            try
+            {
+                var payments = (from payment in _paymentDal.GetAll()
+                                where payment.UserId == userId
+                                select new UserPaymentsDto
+                                {
+                                    Id = payment.Id,
+                                    CarId = payment.CarId,
+                                    RentalId = payment.RentalId,
+                                    Status = payment.Status.ToString(),
+                                    Created=payment.CreatedTime,
+                                    PaymentType= payment.Type.ToString(),
+                                    balancePackageId=payment.BalancePackageId,
+                                    totalPrice=payment.TotalPrice,                        
+
                                 }).ToList();
 
                 if (payments.Any())

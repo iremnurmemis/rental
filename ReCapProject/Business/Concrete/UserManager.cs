@@ -20,6 +20,12 @@ namespace Business
              _userDal.Add(user);
         }
 
+        public IDataResult<List<User>> GetAllUser()
+        {
+            return new SuccessDataResult<List<User>>(_userDal.GetAll() ,"kullanıcılar listelendi");
+
+        }
+
         public IDataResult<User> GetById(int userId)
         {
             return new SuccessDataResult<User>(_userDal.Get(u=>u.Id==userId),"user geldi");

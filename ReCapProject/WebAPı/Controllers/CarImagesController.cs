@@ -2,6 +2,7 @@
 using Core.Interceptors.Utilities.Results;
 using DataAccess.Migrations;
 using Entities;
+using Entitiesü;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Tesseract;
@@ -55,6 +56,18 @@ namespace WebAPı.Controllers
             CarImage carImage = new() { CarId = carId, IsMain = IsMain };
             var result = _carImageService.Add(file, carImage);
 
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("AddRentalImages")]
+        public async Task<IActionResult> AddRentalImages([FromForm] int rentalId, [FromForm] List<IFormFile> images)
+        {
+            var result = await _carImageService.AddRentalImages(rentalId, images);
 
             if (result.Success)
             {

@@ -6,7 +6,9 @@ using Entities;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
+using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
+using System.Text.Json;
 
 namespace Business
 {
@@ -130,45 +132,60 @@ namespace Business
         }
 
 
-         //ŞİFREMİ UNUTTUM
+        //ŞİFREMİ UNUTTUM
+        // Şifre sıfırlama talebi
         public IResult RequestPasswordReset(string email)
         {
+            var emailValidation = new EmailAddressAttribute();
+            if (!emailValidation.IsValid(email))
+            {
+                return new ErrorResult("Geçerli bir e-posta adresi giriniz.");
+            }
+
             var user = _userService.GetByMail(email).Data;
             if (user == null)
             {
-                return new ErrorResult("Kullanıcı bulunamadı");
+                return new ErrorResult("Bu e-posta adresine ait bir kullanıcı bulunamadı.");
             }
 
-            user.Token = Guid.NewGuid().ToString();
+            try
+            {
+                user.Token = Guid.NewGuid().ToString();  // Eşsiz token oluşturuluyor
+                _userDal.Update(user);  // Kullanıcıyı güncelle
 
-            _userDal.Update(user);
-            var resetLink = $"http://localhost:5153/api/Auths/reset-password?email={user.Email}&token={user.Token}";
-            var emailBody = $"Merhaba {user.FirstName}, şifrenizi sıfırlamak için <a href='{resetLink}'>buraya tıklayın</a>.";
-            _notificationService.SendNotification(user.Email, "Şifre Sıfırlama", emailBody);
+                var resetLink = $"http://localhost:3000/reset-password?email={user.Email}&token={user.Token}";
+                var emailBody = $"Merhaba {user.FirstName}, şifrenizi sıfırlamak için <a href='{resetLink}'>buraya tıklayın</a>.";
 
-            return new SuccessResult("Şifre sıfırlama bağlantısı e-posta ile gönderildi.");
+                _notificationService.SendNotification(user.Email, "Şifre Sıfırlama", emailBody);  // E-posta gönderimi
+
+                return new SuccessResult("Şifre sıfırlama bağlantısı e-posta ile gönderildi.");  // Başarı durumu
+            }
+            catch (Exception ex)
+            {
+                return new ErrorResult($"E-posta gönderimi sırasında bir hata oluştu: {ex.Message}");  // Hata durumu
+            }
         }
 
 
-       
+        // Şifre değiştirme işlemi
         public IResult ResetPassword(string email, string token, string newPassword)
         {
             var user = _userService.GetByMail(email).Data;
-            if (user == null)
+            if (user == null || user.Token != token)
             {
                 return new ErrorResult("Geçersiz veya süresi dolmuş token");
             }
 
-            byte[] paasswordHash, passwordSalt;
-            HashingHelper.CreatePasswordHash(newPassword, out paasswordHash, out passwordSalt);
-            user.PasswordHash = paasswordHash;
+            byte[] passwordHash, passwordSalt;
+            HashingHelper.CreatePasswordHash(newPassword, out passwordHash, out passwordSalt);  // Şifre hash'leme
+            user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
-            user.Token = null;
-            _userDal.Update(user);
+            user.Token = null;  // Token'ı sıfırlıyoruz
+            _userDal.Update(user);  // Kullanıcıyı güncelliyoruz
 
             return new SuccessResult("Şifre başarıyla değiştirildi.");
-
         }
+
 
         //ŞİİFREMİ DEĞİŞTİRMEK İSTİYORUM
         public IResult ChangePassword(string email, string currentPassword, string newPassword)
@@ -193,6 +210,9 @@ namespace Business
             return new SuccessResult("Şifre başarıyla güncellendi.");
 
         }
+
+
+
 
     }
 

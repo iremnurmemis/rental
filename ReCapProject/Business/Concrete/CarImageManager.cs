@@ -11,13 +11,49 @@ namespace Business
     {
         ICarImageDal _carImageDal;
         IFileHelper _fileHelper;
-        public CarImageManager(ICarImageDal carImageDal, IFileHelper fileHelper)
+        ICarRentalDal _carRentalDal;
+        public CarImageManager(ICarImageDal carImageDal, IFileHelper fileHelper, ICarRentalDal carRentalDal)
         {
             _carImageDal = carImageDal;
             _fileHelper = fileHelper;
+            _carRentalDal = carRentalDal;
         }
 
-        
+        public async Task<IResult> AddRentalImages(int rentalId, List<IFormFile> files)
+        {
+            if (files.Count != 4)
+            {
+                return new ErrorResult("Kiralama iadesi için 4 adet fotoğraf yüklenmelidir.");
+            }
+
+            var rental=_carRentalDal.Get(cr=>cr.Id==rentalId);
+            if (rentalId==null)
+            {
+                return new ErrorResult("Kiralama bulunamadı");
+            }
+
+            foreach (var file in files)
+            {
+                string imagePath = _fileHelper.Add(file);
+
+                var rentalImage = new CarImage
+                {
+                    RentalId = rentalId,
+                    CarId=2,
+                    ImagePath = imagePath,
+                    Date = DateTime.UtcNow,
+                    IsMain = false
+                };
+
+                _carImageDal.Add(rentalImage);
+            }
+
+            return new SuccessResult("Kiralama iade fotoğrafları başarıyla eklendi.");
+        }
+
+
+
+
         public IResult Add(IFormFile file, CarImage carImage)
         {
             IResult? result = BusinessRules.Run(CheckIfCarImageLimit(carImage.CarId));

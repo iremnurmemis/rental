@@ -23,8 +23,7 @@ namespace Entities
         public int SeatCount { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-
-        
+        public decimal PricePerDay { get; set; }
         public List<CarImageDto> CarImages { get; set; }
 
        

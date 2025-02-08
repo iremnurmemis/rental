@@ -62,6 +62,9 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("OperationClaimId")
+                        .HasColumnType("integer");
+
                     b.Property<byte[]>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("bytea");
@@ -219,6 +222,9 @@ namespace DataAccess.Migrations
                     b.Property<int?>("CarId1")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("CarRentalId")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("timestamp with time zone");
 
@@ -228,12 +234,17 @@ namespace DataAccess.Migrations
                     b.Property<bool>("IsMain")
                         .HasColumnType("boolean");
 
+                    b.Property<int?>("RentalId")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CarId");
 
                     b.HasIndex("CarId1")
                         .IsUnique();
+
+                    b.HasIndex("CarRentalId");
 
                     b.ToTable("CarImages");
                 });
@@ -605,6 +616,10 @@ namespace DataAccess.Migrations
                         .WithOne("MainImage")
                         .HasForeignKey("Entities.CarImage", "CarId1");
 
+                    b.HasOne("Entities.CarRental", null)
+                        .WithMany("RentalImages")
+                        .HasForeignKey("CarRentalId");
+
                     b.Navigation("Car");
                 });
 
@@ -682,6 +697,8 @@ namespace DataAccess.Migrations
             modelBuilder.Entity("Entities.CarRental", b =>
                 {
                     b.Navigation("Payments");
+
+                    b.Navigation("RentalImages");
                 });
 
             modelBuilder.Entity("Entities.Card", b =>

@@ -1,12 +1,12 @@
 ﻿using Business;
-using Core.Interceptors.Utilities.Results;
+using Core;
 using DataAccess;
-using DataAccess.Migrations;
 using Entities;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using System.Security.Claims;
 
 namespace WebAPı.Controllers
 {
@@ -19,13 +19,13 @@ namespace WebAPı.Controllers
         IUserService _userService;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public AuthsController(IAuthService authService,IUserDal userDal,IUserService userService, IHttpContextAccessor httpContextAccessor)
+        public AuthsController(IAuthService authService, IUserDal userDal, IUserService userService, IHttpContextAccessor httpContextAccessor)
         {
             _authService = authService;
             _userDal = userDal;
             _userService = userService;
             _httpContextAccessor = httpContextAccessor;
-            
+
         }
 
         [HttpPost("login")]
@@ -51,11 +51,11 @@ namespace WebAPı.Controllers
         [HttpPost("register")]
         public IActionResult Register(UserForRegisterDto userForRegisterDto)
         {
-        
+
             var registerResult = _authService.Register(userForRegisterDto, userForRegisterDto.Password);
             if (!registerResult.Success)
             {
-                return BadRequest(new {message=registerResult.Message});
+                return BadRequest(new { message = registerResult.Message });
             }
 
             return Ok(registerResult.Data);
@@ -79,7 +79,7 @@ namespace WebAPı.Controllers
         }
 
         [HttpPost("request-password-reset")]
-        public IActionResult RequestPasswordReset([FromBody] string email)
+        public IActionResult RequestPasswordReset(string email)
         {
             var result = _authService.RequestPasswordReset(email);
             if (result.Success)
@@ -110,6 +110,12 @@ namespace WebAPı.Controllers
             }
             return BadRequest(result.Message);
         }
+
+
+
+
+
+       
 
 
     }

@@ -39,6 +39,29 @@ namespace WebAPı.Controllers
         }
 
 
+        [HttpGet("GetUserPayments")]
+        public IActionResult GetPaymentsByUserIdFrontend(int userId)
+        {
+            var result = _paymentService.GetAllPaymentByUserIdFrontend(userId);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
+
+        [HttpGet("GetPaymentsFront")]
+        public IActionResult GetPaymentsFront()
+        {
+            var result = _paymentService.GetAllPaymentsFront();
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
+
+
         [HttpPost("AddPayment")]
         public IActionResult AddPayment([FromBody] Payment payment)
         {

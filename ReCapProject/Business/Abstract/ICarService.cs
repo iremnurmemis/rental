@@ -11,6 +11,7 @@ namespace Business
         IDataResult<List<Car>> GetByCarId(int carId);
         IDataResult<List<Car>> GetByBrandId(int brandId);
         IDataResult<List<Car>> GetByCategoryId(int categoryId);
+        IDataResult<CarDetailDto> GetCarDetail(int carId);
 
         IDataResult<List<CarLocationDto>> GetAllCarsLocation();//map de müsaiit araclları gösterme ve bunu categoryleri farklı renkte ayırma
 
@@ -22,7 +23,7 @@ namespace Business
         IResult Add(Car car);
         IResult Update(Car car);
     
-        IResult Delete(Car car);
+        IResult Delete(int carId);
         
     }
 }

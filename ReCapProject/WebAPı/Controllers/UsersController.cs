@@ -37,6 +37,17 @@ namespace WebAPı.Controllers
             return NotFound(new { message = "User not found" });
         }
 
+        [HttpGet("get-all-user")]
+        public IActionResult GetAllUser()
+        {
+            var result = _userService.GetAllUser();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return NotFound(new { message = "User not found" });
+        }
+
         [HttpGet("get-by-email")]
         public IActionResult GetByMail(string email)
         {

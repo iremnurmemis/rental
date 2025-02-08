@@ -13,6 +13,8 @@ namespace Business
 
         IDataResult<List<Payment>> GetAll();
         IDataResult<List<UserPaymentsDto>> GetAllPaymentByUserId(int userId);
+        IDataResult<List<UserPaymentsDto>> GetAllPaymentByUserIdFrontend(int userId);
+        IDataResult<List<UserPaymentsDto>> GetAllPaymentsFront();
 
 
 

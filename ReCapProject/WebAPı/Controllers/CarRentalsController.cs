@@ -1,5 +1,7 @@
 ﻿using Business;
 using Core.Interceptors.Utilities.Results;
+using DataAccess;
+using DataAccess.Migrations;
 using Entities;
 using Entitiesü;
 using Microsoft.AspNetCore.Http;
@@ -14,9 +16,13 @@ namespace WebAPı.Controllers
     public class CarRentalsController : ControllerBase
     {
         ICarRentalService _carRentalService;
-        public CarRentalsController(ICarRentalService carRentalService)
+        ICarRentalDal _carRentalDal;
+        ICarImageDal _carImageDal;
+        public CarRentalsController(ICarRentalService carRentalService,ICarRentalDal carRentalDal,ICarImageDal carImageDal)
         {
             _carRentalService = carRentalService;
+            _carRentalDal = carRentalDal;
+            _carImageDal= carImageDal;
         }
 
         [HttpPost("AddCarRental")]
@@ -32,9 +38,9 @@ namespace WebAPı.Controllers
         }
 
         [HttpPost("CompleteCarRental")]
-        public async Task<IActionResult> CompleteCarRental([FromBody] İadeRequest request)
+        public async Task<IActionResult> CompleteCarRental([FromForm] İadeRequest request)
         {
-            var result = await _carRentalService.CompleteCarRental(request.rentalId);  // await kullanarak sonucu bekliyoruz
+            var result = await _carRentalService.CompleteCarRental(request.rentalId,request.Images);  // await kullanarak sonucu bekliyoruz
             if (result.Success)
             {
                 return Ok(result);
@@ -179,6 +185,31 @@ namespace WebAPı.Controllers
             }
         }
 
+
+        [HttpGet("getUserCarRentalsDetailsforFrontend")]
+        public IActionResult GetUserAllCarRentalsDetailsforFrontend(int userId)
+        {
+           
+            IDataResult<List<UserRentalsDto>> result = _carRentalService.GetUserRentalsforFrontend(userId);
+
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            else
+            {
+               
+                return BadRequest(result.Message);
+            }
+        }
+
+        [HttpGet("GetCarRentalById")]
+        public IDataResult<CarRental> GetCarRentalById(int rentalId)
+        {
+            var rental = _carRentalDal.Get(cr => cr.Id == rentalId);
+            rental.RentalImages = _carImageDal.GetAll().Where(cı => cı.RentalId == rental.Id).ToList();
+            return new SuccessDataResult<CarRental>(rental);
+         }
 
     }
 }

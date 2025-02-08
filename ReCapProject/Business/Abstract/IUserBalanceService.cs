@@ -13,6 +13,7 @@ namespace Business
 
         Task<IResult> Add(UserBalance userBalance);
         IResult Update(UserBalance userBalance);
-        
+        IDataResult<UserDetailDto> GetDetail(int userId);
+
     }
 }

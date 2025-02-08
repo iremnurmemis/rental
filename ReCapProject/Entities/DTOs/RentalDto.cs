@@ -34,5 +34,7 @@ namespace Entities
         public DateTime? overdueEndDate{ get; set; }
         public double? totalOverdueFee { get; set; }
 
+        public List<string>? RentalImages { get; set; }
+
     }
 }

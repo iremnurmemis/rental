@@ -8,6 +8,7 @@ namespace Business
     public interface ICarImageService
     {
         IResult Add(IFormFile file, CarImage carImage);
+        Task<IResult> AddRentalImages(int rentalId, List<IFormFile> files);
         IResult Delete(CarImage carImage);
         IResult Update(IFormFile file, CarImage carImage);
 

@@ -26,6 +26,7 @@ namespace Entities
         public double? EndLatitude { get; set; }
 
         public ICollection<Payment>? Payments { get; set; }
+        public ICollection<CarImage>? RentalImages { get; set; }
     }
 }
 

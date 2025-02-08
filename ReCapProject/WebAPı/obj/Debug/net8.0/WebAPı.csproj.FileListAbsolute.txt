@@ -272,3 +272,4 @@ C:\Users\ılayda\source\repos\rentaldeneme\ReCapProject\WebAPı\bin\Debug\net8.0
 C:\Users\ılayda\source\repos\rentaldeneme\ReCapProject\WebAPı\bin\Debug\net8.0\x64\leptonica-1.82.0.dll
 C:\Users\ılayda\source\repos\rentaldeneme\ReCapProject\WebAPı\bin\Debug\net8.0\x64\tesseract50.dll
 C:\Users\ılayda\source\repos\rentaldeneme\ReCapProject\WebAPı\bin\Debug\net8.0\Tesseract.dll
+C:\Users\ılayda\source\repos\rentaldeneme\ReCapProject\WebAPı\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll

@@ -50,5 +50,22 @@ namespace WebAPı.Controllers
             return BadRequest(result.Message);
         }
 
+        [HttpGet("getUserDetail")]
+        public IActionResult GetDetail(int userId)
+        {
+           
+            var result = _userBalanceService.GetDetail(userId);
+
+           
+            if (result.Success)
+            {
+                return Ok(result.Data); 
+            }
+            else
+            {
+                return BadRequest(result.Message); 
+            }
+        }
+
     }
 }

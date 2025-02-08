@@ -17,6 +17,7 @@ namespace Core
 
         public bool IsDrivingLicenseVerified {  get; set; }
         public string TCKN { get; set; }
+        public int OperationClaimId { get; set; } //sahip olduğu rol
        
        
     }

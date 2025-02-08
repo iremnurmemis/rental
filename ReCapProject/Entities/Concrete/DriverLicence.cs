@@ -8,5 +8,6 @@ namespace Entities
         public string LicenceNo { get; set; }
         public DateTime ValidUntil { get; set; } 
         public DateTime UploadDate { get; set; }
+
     }
 }

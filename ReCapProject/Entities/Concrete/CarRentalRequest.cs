@@ -1,6 +1,7 @@
 ﻿
 
 using Entities;
+using Microsoft.AspNetCore.Http;
 
 namespace Entitiesü
 {
@@ -17,7 +18,9 @@ namespace Entitiesü
     public class İadeRequest
     {
         public int rentalId { get; set; }
-       
+        public List<IFormFile> Images { get; set; }
+
+
     }
 
     public class UpdateCardIdRequest
@@ -26,4 +29,11 @@ namespace Entitiesü
         public int rentalId { get; set; }
 
     }
+
+    public class RentalImageRequest
+    {
+        public int RentalId { get; set; }
+        public List<IFormFile> Images { get; set; }
+    }
+
 }

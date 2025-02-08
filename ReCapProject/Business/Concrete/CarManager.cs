@@ -2,6 +2,7 @@
 using Core;
 using Core.Interceptors.Utilities.Results;
 using DataAccess;
+using DataAccess.Migrations;
 using Entities;
 using System.Reflection.Metadata.Ecma335;
 
@@ -21,16 +22,20 @@ namespace Business
             _modelDal = modelDal;
         }
 
-        [ValidationAspect(typeof(CarValidator))]
+        //[ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
-
             _carDal.Add(car);
-            return new SuccessResult(Messages.CarAdded);
+            return new SuccessDataResult<Car>(Messages.CarAdded);
         }
 
-        public IResult Delete(Car car)
+        public IResult Delete(int carId)
         {
+            var car = _carDal.Get(c => c.Id == carId);
+            if(car == null)
+            {
+                return new ErrorResult("verilen ıd ye sahip araç bulunmamakatadır.");
+            }
             _carDal.Delete(car);
             return new SuccessResult(Messages.CarDeleted);
         }
@@ -39,6 +44,12 @@ namespace Business
         {
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(),Messages.CarListed);
         }
+
+        public IDataResult<CarDetailDto> GetCarDetail(int carId)
+        {
+            return new SuccessDataResult<CarDetailDto>(_carDal.GetCarDetailById(carId), Messages.CarListed);
+        }
+
 
 
         public IDataResult<List<Car>> GetAll()

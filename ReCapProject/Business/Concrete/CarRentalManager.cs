@@ -4,9 +4,11 @@ using Core.Interceptors.Utilities.Results;
 using DataAccess;
 using DataAccess.Migrations;
 using Entities;
+using Microsoft.AspNetCore.Http;
 using System.Data;
 using System.Diagnostics;
 using System.Runtime.Intrinsics.Arm;
+using System.Text;
 using System.Text.Json;
 using System.Transactions;
 
@@ -25,8 +27,10 @@ namespace Business
        IIyzipayService _iyzipayService;
         IPaymentDal _paymentDal;
         IUserBalanceDal _userBalanceDal;
+        ICarImageService _carImageService;
+        ICarImageDal _carImageDal;
 
-        public CarRentalManager(ICarRentalDal carRental, ICarDal car, INotificationService notificationService, IUserService userService,ICardDal cardDal,ICategoryDal categoryDal,IBrandDal brandDal,IModelDal modelDal,IIyzipayService ıyzipayService,IPaymentDal paymentDal,IUserBalanceDal userBalanceDal)
+        public CarRentalManager(ICarRentalDal carRental, ICarDal car, INotificationService notificationService, IUserService userService,ICardDal cardDal,ICategoryDal categoryDal,IBrandDal brandDal,IModelDal modelDal,IIyzipayService ıyzipayService,IPaymentDal paymentDal,IUserBalanceDal userBalanceDal,ICarImageService carImageService,ICarImageDal carImageDal)
         {
             _carRental = carRental;
             _car = car;
@@ -39,6 +43,8 @@ namespace Business
             _paymentDal = paymentDal;
            _iyzipayService=ıyzipayService;
             _userBalanceDal= userBalanceDal;
+            _carImageService= carImageService;
+            _carImageDal= carImageDal;
         }
 
         public async Task<IResult> AddCarRental(int carId, int userId, int cardId, RentalType rentalType, int? durationInDays = null,bool? useBalance=true)
@@ -207,7 +213,7 @@ namespace Business
             return new ErrorResult("Geçersiz kiralama tipi.");
         }
 
-        public async Task<IResult> CompleteCarRental(int rentalId)
+        public async Task<IResult> CompleteCarRental(int rentalId, List<IFormFile> images)
         {
             var rental = _carRental.GetRentalWithCarId(rentalId);
 
@@ -215,6 +221,19 @@ namespace Business
             {
                 return new ErrorResult($"{rentalId} ID'sine ait kiralama bulunamadı.");
             }
+
+
+            if (images == null || images.Count != 4)
+            {
+                return new ErrorResult("Kiralama iadesi için 4 adet fotoğraf yüklenmelidir.");
+            }
+
+            var imageResult = await _carImageService.AddRentalImages(rentalId, images);
+            if (!imageResult.Success)
+            {
+                return imageResult;
+            }
+
 
             var user = _userService.GetById(rental.UserId);
 
@@ -471,6 +490,7 @@ namespace Business
                                    RentalType=cr.RentalType.ToString(),
                                    overdueEndDate=cr.overdueEndDate,
                                    totalOverdueFee=cr.totalOverdueFee,
+                                   RentalImages = _carImageDal.GetAll().Where(cı=>cı.RentalId==cr.Id).Select(cı=>cı.ImagePath).ToList(),
                                }).ToList();
 
                 if (rentals.Any())
@@ -615,5 +635,43 @@ namespace Business
             }
         }
 
+        public IDataResult<List<UserRentalsDto>> GetUserRentalsforFrontend(int userId)
+        {
+            try
+            {
+                var rental = (from cr in _carRental.GetAll()
+                              join c in _car.GetAll() on cr.CarId equals c.Id
+                              where cr.UserId == userId
+                              select new UserRentalsDto
+                              {
+                                  CarId = cr.CarId,
+                                  RentalId = cr.Id,
+                                  StartDate = cr.StartDate,
+                                  EndDate = cr.EndDate,
+                                  TotalPrice = cr.TotalPrice,
+                                  rentalStatus = cr.RentalStatus.ToString(),
+                                  rentalType = cr.RentalType.ToString(),
+                                  overdueDate = cr.overdueEndDate,
+                                  overduePrice = cr.totalOverdueFee,
+
+                              }
+                       ).ToList();
+                if (rental != null)
+                {
+                    return new SuccessDataResult<List<UserRentalsDto>>(rental);
+                }
+                else
+                {
+                    return new ErrorDataResult<List<UserRentalsDto>>("No rental found for this user.");
+                }
+
+            }catch (Exception ex)
+            {
+                return new ErrorDataResult<List<UserRentalsDto>>(ex.Message);
+            }
+           
+        }
+
+      
     }
 }
