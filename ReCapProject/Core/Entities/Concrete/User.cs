@@ -16,7 +16,7 @@ namespace Core
         public string? Token { get; set; } //token email gönderme işlemleri içindir
 
         public bool IsDrivingLicenseVerified {  get; set; }
-        public string TCKN { get; set; }
+        public string? TCKN { get; set; }
         public int OperationClaimId { get; set; } //sahip olduğu rol
        
        

@@ -93,7 +93,7 @@ namespace WebAPı.Controllers
 
         //}
 
-        [Authorize(AuthenticationSchemes = "CookieAuth")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
@@ -120,6 +120,7 @@ namespace WebAPı.Controllers
             return BadRequest(cars);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet("GetAllDetails")]
         public IActionResult GetAllDetails()
         {

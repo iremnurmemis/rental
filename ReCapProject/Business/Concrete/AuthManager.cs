@@ -36,6 +36,57 @@ namespace Business
 
 
 
+        public IDataResult<User> AdminLogin(UserForLoginDto userForLoginDto)
+        {
+            var userToCheck = _userService.GetByMail(userForLoginDto.Email).Data;
+            if (userToCheck == null)
+            {
+                return new ErrorDataResult<User>("Bu emaile sahip kullanıcı bulunamadı.");
+            }
+
+            if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
+            {
+                return new ErrorDataResult<User>("Girdiğiniz şifre hatalı.");
+            }
+
+            if (userToCheck.OperationClaimId !=2)
+            {
+                return new ErrorDataResult<User>("yetkisiz erişim");
+            }
+
+            // Kullanıcı bilgilerini içeren Claims oluşturma
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, userToCheck.Email),
+
+            };
+
+            // OperationClaimId değerine göre rol belirleme
+            if (userToCheck.OperationClaimId == 0)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, "User"));
+            }
+            else if (userToCheck.OperationClaimId == 2)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, "Admin"));
+            }
+
+
+            var claimsIdentity = new ClaimsIdentity(claims, "CookieAuth");
+
+            // Cookie kimlik doğrulama bilgisi
+            var authProperties = new Microsoft.AspNetCore.Authentication.AuthenticationProperties
+            {
+                IsPersistent = true, // Kalıcı oturum
+                ExpiresUtc = DateTime.UtcNow.AddHours(56) // 2 saat geçerlilik
+            };
+
+            // Kullanıcı oturumu başlatma
+            _httpContextAccessor.HttpContext.SignInAsync("CookieAuth", new ClaimsPrincipal(claimsIdentity), authProperties).Wait();
+
+            return new SuccessDataResult<User>(userToCheck, "Login successful.");
+        }
+
 
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)
         {
@@ -50,12 +101,28 @@ namespace Business
                 return new ErrorDataResult<User>("Girdiğiniz şifre hatalı.");
             }
 
+            if (userToCheck.OperationClaimId == 2)
+            {
+                return new ErrorDataResult<User>("yetkisiz erişim");
+            }
+
             // Kullanıcı bilgilerini içeren Claims oluşturma
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, userToCheck.Email),
 
             };
+
+            // OperationClaimId değerine göre rol belirleme
+            if (userToCheck.OperationClaimId == 0)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, "User"));
+            }
+            else if (userToCheck.OperationClaimId == 2)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, "Admin"));
+            }
+
 
             var claimsIdentity = new ClaimsIdentity(claims, "CookieAuth");
 
@@ -90,7 +157,7 @@ namespace Business
                     PasswordSalt = passwordSalt,
                     PhoneNumber = userForRegisterDto.PhoneNumber,
                     Status = false, // false yap, ilk maille onaylasın
-                    TCKN=userForRegisterDto.TCKN,
+                   // TCKN=userForRegisterDto.TCKN,
                 };
 
                 _userService.Add(user);

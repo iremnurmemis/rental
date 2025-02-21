@@ -81,7 +81,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("TCKN")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Token")

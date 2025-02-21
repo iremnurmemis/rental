@@ -10,6 +10,7 @@ namespace Business
     {
         IDataResult<User> Register(UserForRegisterDto userForRegisterDto,string password);
         IDataResult<User> Login(UserForLoginDto userForLoginDto);
+        IDataResult<User> AdminLogin(UserForLoginDto userForLoginDto);
         IResult Logout();
         IResult UserExist(string email);
         IResult RequestPasswordReset(string email); //emaile şifre sıfırlama bağlantısı gönderilir ŞİFREMİ UNUTTUM

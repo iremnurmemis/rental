@@ -41,6 +41,19 @@ namespace WebAPı.Controllers
             return Ok(result.Data);
         }
 
+        [HttpPost("admin/login")]
+        public IActionResult AdminLogin([FromBody] UserForLoginDto userForLoginDto)
+        {
+            var result = _authService.AdminLogin(userForLoginDto);
+            if (!result.Success)
+            {
+                return Unauthorized(new { message = result.Message });
+            }
+
+            return Ok(result.Data);
+        }
+
+
         [HttpPost("logout")]
         public IActionResult Logout()
         {
