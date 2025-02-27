@@ -1,6 +1,4 @@
-﻿
-
-using Entities;
+﻿using Entities;
 
 namespace DataAccess
 {

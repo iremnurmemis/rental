@@ -1,6 +1,7 @@
 ﻿
 using Autofac;
 using Autofac.Extras.DynamicProxy;
+using Business.Abstract;
 using Business.Concrete;
 using Castle.DynamicProxy;
 using Core;
@@ -50,6 +51,7 @@ namespace Business
             builder.RegisterType<EfBalancePackageDal>().As<IBalancePackageDal>().SingleInstance();
             builder.RegisterType<UserBalanceManager>().As<IUserBalanceService>().SingleInstance();
             builder.RegisterType<EfUserBalanceDal>().As<IUserBalanceDal>().SingleInstance();
+            builder.RegisterType<DashboardManager>().As<IDashboardService>().SingleInstance();
 
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();

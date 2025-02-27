@@ -4,9 +4,10 @@
 using Core.Interceptors.Utilities.Results;
 using Entities;
 
+
 namespace Business
 {
-   public interface IPaymentService
+    public interface IPaymentService
     {
         IDataResult<Payment> Add(Payment payment);
         IResult Delete(Payment payment);
